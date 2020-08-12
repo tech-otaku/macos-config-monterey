@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 
-# USAGE: [bash] ${HOME}/macos-config-catalina-master/macos-config.sh
+# USAGE: [bash] ${HOME}/macos-config-big-sur-master/macos-config.sh
 
 # NSGlobalDomain is synonymous with .GlobalPreferences
 # '-g' and '-globalDomain' can be used as synonyms for NSGlobalDomain or .GlobalPreferences
 
-# macOS Catalina 10.15
+# macOS Big Sur 11.0
 
-IMAGEFILE="$HOME/macos-config-catalina-master/Photos/steve-colour.jpg"
-DESKTOP="catalina"
+#IMAGEFILE="$HOME/macos-config-big-sur-master/Photos/steve-colour.jpg"
+DESKTOP="graphic"
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -138,6 +138,9 @@ EOD
 
     # Green
     #defaults write -g AppleAccentColor -int 3
+    
+    # Blue
+    #defaults write -g AppleAccentColor -int 4
 
     # Purple
     #defaults write -g AppleAccentColor -int 5
@@ -145,11 +148,19 @@ EOD
     # Pink
     #defaults write -g AppleAccentColor -int 6
 
-    # Blue
+    # Accent colour
     defaults delete -g AppleAccentColor 2> /dev/null     # Defaults throws an error if the key does not exist, so write STDERR to /dev/null to surpress error messages
 
 
 # System Preferences > General > Highlight colour
+ 	# Accent Colour
+    defaults delete -g AppleHighlightColor 2> /dev/null      # Defaults throws an error if the key does not exist, so write STDERR to /dev/null to surpress error messages
+    defaults write -g AppleAquaColorVariant -int 1
+    
+	# Blue
+    #defaults write -g AppleHighlightColor -string "0.698039 0.843137 1.000000 Blue"
+    #defaults write -g AppleAquaColorVariant -int 1
+    
     # Purple
     #defaults write -g AppleHighlightColor -string "0.968627 0.831373 1.000000 Purple"
     #defaults write -g AppleAquaColorVariant -int 1
@@ -173,16 +184,13 @@ EOD
     # Green
     #defaults write -g AppleHighlightColor -string "0.752941 0.964706 0.678431 Green"
     #defaults write -g AppleAquaColorVariant -int 1
+    
 
     # Graphite
     #defaults write -g AppleHighlightColor -string "0.847059 0.847059 0.862745 Graphite"
     #defaults write -g AppleAquaColorVariant -int 1      # Set to 6 if Accent Colour is also Graphite or 1 if not
 
-    # Blue
-    defaults delete -g AppleHighlightColor 2> /dev/null      # Defaults throws an error if the key does not exist, so write STDERR to /dev/null to surpress error messages
-    defaults write -g AppleAquaColorVariant -int 1
-
-
+   
 # System Preferences > General > Sidebar icon size
     # Small
 	defaults write -g NSTableViewDefaultSizeMode -int 1
@@ -192,15 +200,15 @@ EOD
 
     # Large
     #defaults write -g NSTableViewDefaultSizeMode -int 3
-
-
-# System Preferences > General > Automatically hide and show the menu bar
+    
+    
+# System Preferences > General > Allow wallpapaer tinting in windows
 	# checked
-	#defaults write -g _HIHideMenuBar -bool true
-
+    defaults write -g AppleReduceDesktopTinting -bool false
+    
     # unchecked
-    defaults write -g _HIHideMenuBar -bool false
-
+    defaults write -g AppleReduceDesktopTinting -bool true
+    
 
 # System Preferences > General > Show scroll bars:
 	# Automatically based on mouse or trackpad
@@ -223,6 +231,17 @@ EOD
 
 # System Preferences > General > Default web browser
     # GUI Scripting: /Users/steve/macos-config-catalina-master/Scripts/Config All.scpt
+
+
+# System Preferences > General > Prefer tabs: <never|in full screen|always> when opening documents
+    # never
+    #defaults write -g AppleWindowTabbingMode -string "manual"
+
+    # in full screen only
+    defaults write -g AppleWindowTabbingMode -string "fullscreen"
+    
+    # always
+    #defaults write -g AppleWindowTabbingMode -string "always"
 
 
 # System Preferences > General > Ask to keep changes when closing documents
@@ -264,14 +283,14 @@ echo "...General"
 # System Preferences > Desktop & Screen Saver > Desktop
 
 
-	# The Desktop picture is set using 'set-desktop-catalina.sh'. See https://github.com/tech-otaku/macos-desktop/blob/master/README.md
-	if [ ! -f /Users/steve/macos-config-catalina-master/set-desktop-catalina.sh ]; then
-		curl -o "$ScriptPath/set-desktop-catalina.sh" -L https://raw.githubusercontent.com/tech-otaku/macos-desktop/master/set-desktop-catalina.sh
+	# The Desktop picture is set using 'set-desktop-big-sur.sh'. See https://github.com/tech-otaku/macos-desktop/blob/master/BIG-SUR.md
+	if [ ! -f /Users/steve/macos-config-catalina-master/set-desktop-big-sur.sh ]; then
+		curl -o "$ScriptPath/set-desktop-big-sur.sh" -L https://raw.githubusercontent.com/tech-otaku/macos-desktop/master/set-desktop-big-sur.sh
 	fi
 	
-	chmod +x "$ScriptPath/set-desktop-catalina.sh"
+	chmod +x "$ScriptPath/set-desktop-big-sur.sh"
 	
-	"$ScriptPath/set-desktop-catalina.sh" $DESKTOP
+	"$ScriptPath/set-desktop-big-sur.sh" $DESKTOP
 	
 
 # System Preferences > Desktop & Screen Saver > Screen Saver > Start after
@@ -304,7 +323,7 @@ echo "...Desktop & Screensaver"
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # #
-# # 3. SYSTEM PREFERENCES > DOCK
+# # 3. SYSTEM PREFERENCES > DOCK & MENU BAR
 # #
 
 # System Preferences > Dock > Size
@@ -342,17 +361,6 @@ echo "...Desktop & Screensaver"
 
     # Scale effect
     #defaults write com.apple.dock mineffect -string "scale"
-
-
-# System Preferences > Dock > Prefer tabs when opening documents
-    # Always
-    #defaults write -g AppleWindowTabbingMode -string "always"
-
-    # In Full Screen Only
-    defaults write -g AppleWindowTabbingMode -string "fullscreen"
-
-    # Manually
-    #defaults write -g AppleWindowTabbingMode -string "manual"
 
 
 # System Preferences > Dock > Double click a window's title bar to
@@ -404,6 +412,15 @@ echo "...Desktop & Screensaver"
 
     # unchecked
     #defaults write com.apple.dock show-recents -bool false
+ 
+    
+# System Preferences > Dock & Menu Bar > Automatically hide and show the menu bar
+	# checked
+	#defaults write -g _HIHideMenuBar -bool true
+
+    # unchecked
+    defaults write -g _HIHideMenuBar -bool false
+
 
 echo "...Dock"
 
@@ -1451,11 +1468,11 @@ echo "Configured Menu Bar Extras"
 	# The default shell for root is /bin/sh. The file /var/root/.profile is read when an admin user types 'sudo -i' or 'sudo su -l' (but not 'sudo su' nor 'sudo -s').
 	# Change the command prompt for the root user to distinguish it from any other user's command prompt by creating /var/root/.profile 
 	
-	cat <<'EOF' | sudo tee /var/root/.profile
-printf "Sourcing /var/root/.profile\n\n"
-
-export PS1="\[\e[1;31m\]\u\[\e[0m\]: \[\e[1m\]\W\[\e[0m\] \[\e[36m\]$\[\e[0m\] "
-EOF
+#	cat <<'EOF' | sudo tee /var/root/.profile
+#printf "Sourcing /var/root/.profile\n\n"
+#
+#export PS1="\[\e[1;31m\]\u\[\e[0m\]: \[\e[1m\]\W\[\e[0m\] \[\e[36m\]$\[\e[0m\] "
+#EOF
 
 
 
@@ -1464,23 +1481,23 @@ EOF
 # # INSTALL HOMEBREW
 # #
 
-	if [[ $(which brew) != "/usr/local/bin/brew" ]]; then
-		# Homebrew
-		/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-
-		echo "Installed Homebrew"
-		
-		if [[ $(which bash) != "/usr/local/bin/bash" ]]; then
-			# Bash
-			brew install bash
-			echo "/usr/local/bin/bash" | sudo tee -a /etc/shells  > /dev/null 2>&1
-			sudo chsh -s /usr/local/bin/bash steve
-
-			echo "Installed Bash"
-		
-		fi
-
-	fi
+#	if [[ $(which brew) != "/usr/local/bin/brew" ]]; then
+#		# Homebrew
+#		/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+#
+#		echo "Installed Homebrew"
+#		
+#		if [[ $(which bash) != "/usr/local/bin/bash" ]]; then
+#			# Bash
+#			brew install bash
+#			echo "/usr/local/bin/bash" | sudo tee -a /etc/shells  > /dev/null 2>&1
+#			sudo chsh -s /usr/local/bin/bash steve
+#
+#			echo "Installed Bash"
+#		
+#		fi
+#
+#	fi
 
 # Revoke sudo privileges
     sudo -k
@@ -1495,7 +1512,7 @@ EOF
 # Change the current user's ($USER) photo
     # Source: https://www.jamf.com/jamf-nation/discussions/4332/how-to-change-local-user-account-#picture-through-command-terminal & https://discussions.apple.com/thread/7596877
     TEMPFILE=$(mktemp)
-    #IMAGEFILE="$ScriptPath/Photos/steve-colour.jpg"
+    IMAGEFILE="$ScriptPath/Photos/steve-colour.jpg"
     echo "0x0A 0x5C 0x3A 0x2C dsRecTypeStandard:Users 5 dsAttrTypeStandard:RecordName dsAttrTypeStandard:UniqueID dsAttrTypeStandard:PrimaryGroupID dsAttrTypeStandard:GeneratedUID externalbinary:dsAttrTypeStandard:JPEGPhoto" > ${TEMPFILE}
     echo ${USER}:${UID}:$(id -g):$(dscl . -read /Users/${USER} GeneratedUID | cut -d' ' -f2):${IMAGEFILE} >> ${TEMPFILE}
     dscl . -delete /Users/$USER JPEGPhoto
