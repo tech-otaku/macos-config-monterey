@@ -288,8 +288,8 @@ echo "...General"
 	pushd "$ScriptPath"
 	
 	if [ ! -f /Users/steve/macos-config-big-sur-master/set-desktop-.sh ]; then
-		curl -o "$ScriptPath/set-desktop.sh" -L https://raw.githubusercontent.com/tech-otaku/macos-desktop/master/set-desktop.sh
-		curl -o "$ScriptPath/options.json" -L https://raw.githubusercontent.com/tech-otaku/macos-desktop/master/options.json
+		curl -o "set-desktop.sh" -L https://raw.githubusercontent.com/tech-otaku/macos-desktop/master/set-desktop.sh
+		curl -o "options.json" -L https://raw.githubusercontent.com/tech-otaku/macos-desktop/master/options.json
 	fi
 	
 	chmod +x set-desktop.sh
