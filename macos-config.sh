@@ -80,7 +80,7 @@ EOD
 
 
 # Absolute path to this script, i.e. /Users/steve/macos-config-big-sur-master
-    ScriptPath=$(dirname "$0")
+    export ScriptPath=$(dirname "$0")
     #cd "$ScriptPath"
 
 
