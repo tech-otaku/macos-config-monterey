@@ -285,7 +285,8 @@ echo "...General"
 
 	# The Desktop picture is set using 'set-desktop.sh'. See https://github.com/tech-otaku/macos-desktop/blob/master/BIG-SUR.md
 	
-	pushd "$ScriptPath"
+
+	pushd $ScriptPath
 	
 	if [ ! -f /Users/steve/macos-config-big-sur-master/set-desktop-.sh ]; then
 		curl -o "set-desktop.sh" -L https://raw.githubusercontent.com/tech-otaku/macos-desktop/master/set-desktop.sh
@@ -293,7 +294,7 @@ echo "...General"
 	fi
 	
 	chmod +x set-desktop.sh
-	set-desktop.sh $DESKTOP
+	./set-desktop.sh $DESKTOP
 	popd
 	
 
@@ -1392,10 +1393,10 @@ echo "Configured Finder Icon View Settings"
     if [ "$ModelName" == "imac" ]; then
     
         # System Preferences > Bluetooth > Show Bluetooth in menu bar [checked]
-        	open /System/Library/CoreServices/Menu\ Extras/Bluetooth.menu								# Comment-out for unchecked
+        	#open /System/Library/CoreServices/Menu\ Extras/Bluetooth.menu								# Comment-out for unchecked
         	
         # System Preferences > Date & Time > Clock > Show date and time in menu bar [checked]
-        	open /System/Library/CoreServices/Menu\ Extras/Clock.menu									# Comment-out for unchecked
+        	#open /System/Library/CoreServices/Menu\ Extras/Clock.menu									# Comment-out for unchecked
         	
         # System Preferences > Keyboard > Input Sources > Show Input menu in menu bar [checked]
 			defaults write com.apple.TextInputMenu visible -bool true									# Comment-out for unchecked
@@ -1413,7 +1414,7 @@ echo "Configured Finder Icon View Settings"
         	open /System/Library/CoreServices/Menu\ Extras/TimeMachine.menu								# Comment-out for unchecked
         
         # System Preferences > Volume > Show volume in menu bar [checked] 
-        	open /System/Library/CoreServices/Menu\ Extras/Volume.menu									# Comment-out for unchecked
+        	#open /System/Library/CoreServices/Menu\ Extras/Volume.menu									# Comment-out for unchecked
         
         # Script Editor > Preferences > General > Script Menu: Show Script menu in menu bar
         	open /System/Library/CoreServices/Script\ Menu.app											# Comment-out for unchecked 
@@ -1424,13 +1425,13 @@ echo "Configured Finder Icon View Settings"
     	# Wi-Fi, Battery, Clock, Spotlight and Notifications are visible by default.  
     
         # System Preferences > Bluetooth > Show Bluetooth in menu bar [checked]
-        	open /System/Library/CoreServices/Menu\ Extras/Bluetooth.menu								# Comment-out for unchecked
+        	#open /System/Library/CoreServices/Menu\ Extras/Bluetooth.menu								# Comment-out for unchecked
         	
         # System Preferences > Date & Time > Clock > Show date and time in menu bar [checked]
-        	open /System/Library/CoreServices/Menu\ Extras/Clock.menu									# Comment-out for unchecked
+        	#open /System/Library/CoreServices/Menu\ Extras/Clock.menu									# Comment-out for unchecked
         	
         # System Preferences > Energy Saver > Show battery status in menu bar [checked]
-        	open /System/Library/CoreServices/Menu\ Extras/Battery.menu									# Comment-out for unchecked
+        	#open /System/Library/CoreServices/Menu\ Extras/Battery.menu									# Comment-out for unchecked
         	
         # System Preferences > Keyboard > Input Sources > Show Input menu in menu bar [checked]
 			defaults write com.apple.TextInputMenu visible -bool true									# Comment-out for unchecked
@@ -1448,7 +1449,7 @@ echo "Configured Finder Icon View Settings"
         	open /System/Library/CoreServices/Menu\ Extras/TimeMachine.menu								# Comment-out for unchecked
         
         # System Preferences > Volume > Show volume in menu bar [checked] 
-        	open /System/Library/CoreServices/Menu\ Extras/Volume.menu									# Comment-out for unchecked
+        	#open /System/Library/CoreServices/Menu\ Extras/Volume.menu									# Comment-out for unchecked
                 
     fi
     
