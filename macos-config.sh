@@ -8,7 +8,7 @@
 # macOS Big Sur 11.0
 
 #IMAGEFILE="$HOME/macos-config-big-sur-master/Photos/steve-colour.jpg"
-DESKTOP="graphic"
+DESKTOP="desert"
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -79,7 +79,7 @@ EOD
     osascript -e 'tell application "System Preferences" to quit'  > /dev/null 2>&1
 
 
-# Absolute path to this script, i.e. /Users/steve/macos-config-catalina-master
+# Absolute path to this script, i.e. /Users/steve/macos-config-big-sur-master
     ScriptPath=$(dirname "$0")
     #cd "$ScriptPath"
 
@@ -283,14 +283,18 @@ echo "...General"
 # System Preferences > Desktop & Screen Saver > Desktop
 
 
-	# The Desktop picture is set using 'set-desktop-big-sur.sh'. See https://github.com/tech-otaku/macos-desktop/blob/master/BIG-SUR.md
-	if [ ! -f /Users/steve/macos-config-catalina-master/set-desktop-big-sur.sh ]; then
-		curl -o "$ScriptPath/set-desktop-big-sur.sh" -L https://raw.githubusercontent.com/tech-otaku/macos-desktop/master/set-desktop-big-sur.sh
+	# The Desktop picture is set using 'set-desktop.sh'. See https://github.com/tech-otaku/macos-desktop/blob/master/BIG-SUR.md
+	
+	pushd "$ScriptPath"
+	
+	if [ ! -f /Users/steve/macos-config-big-sur-master/set-desktop-.sh ]; then
+		curl -o "$ScriptPath/set-desktop.sh" -L https://raw.githubusercontent.com/tech-otaku/macos-desktop/master/set-desktop.sh
+		curl -o "$ScriptPath/options.json" -L https://raw.githubusercontent.com/tech-otaku/macos-desktop/master/options.json
 	fi
 	
-	chmod +x "$ScriptPath/set-desktop-big-sur.sh"
-	
-	"$ScriptPath/set-desktop-big-sur.sh" $DESKTOP
+	chmod +x set-desktop.sh
+	set-desktop.sh $DESKTOP
+	popd
 	
 
 # System Preferences > Desktop & Screen Saver > Screen Saver > Start after
@@ -1533,34 +1537,34 @@ echo "Updated user photo"
 
 
 
-if [ "$ModelName" == "imac" ]; then 
-	# Desktop link to iMac mmacOS Catlina Configuration (Evernote)  
-		tee ~/Desktop/iMac.Catalina.Evernote.webloc > /dev/null 2>&1 <<EOF 
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>URL</key>
-	<string>http://bit.ly/2YdNqjJ</string>
-</dict>
-</plist>
-EOF
+#if [ "$ModelName" == "imac" ]; then 
+#	# Desktop link to iMac mmacOS Catlina Configuration (Evernote)  
+#		tee ~/Desktop/iMac.Catalina.Evernote.webloc > /dev/null 2>&1 <<EOF 
+#<?xml version="1.0" encoding="UTF-8"?>
+#<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+#<plist version="1.0">
+#<dict>
+#	<key>URL</key>
+#	<string>http://bit.ly/2YdNqjJ</string>
+#</dict>
+#</plist>
+#EOF
+#
+#elif [ "$ModelName" == "macbook" ]; then
+#
+#	# Desktop link to MacBook mmacOS Catlina Configuration (Evernote)  
+#		tee ~/Desktop/MacBook.Catalina.Evernote.webloc > /dev/null 2>&1 <<EOF 
+#<?xml version="1.0" encoding="UTF-8"?>
+#<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+#<plist version="1.0">
+#<dict>
+#	<key>URL</key>
+#	<string>http://bit.ly/2LeljgC</string>
+#</dict>
+#</plist>
+#EOF
 
-elif [ "$ModelName" == "macbook" ]; then
-
-	# Desktop link to MacBook mmacOS Catlina Configuration (Evernote)  
-		tee ~/Desktop/MacBook.Catalina.Evernote.webloc > /dev/null 2>&1 <<EOF 
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-	<key>URL</key>
-	<string>http://bit.ly/2LeljgC</string>
-</dict>
-</plist>
-EOF
-
-fi
+#fi
 
 # Add Safari Bookmark for iMac Configuration (Evernote)
 #/usr/libexec/PlistBuddy /Users/steve/Library/Safari/Bookmarks.plist -c "Add :Children:1:Children:0 dict" > /dev/null 2>&1
