@@ -285,10 +285,9 @@ echo "...General"
 
 	# The Desktop picture is set using 'set-desktop.sh'. See https://github.com/tech-otaku/macos-desktop/blob/master/BIG-SUR.md
 	
-
 	pushd $ScriptPath
 	
-	if [ ! -f /Users/steve/macos-config-big-sur-master/set-desktop-.sh ]; then
+	if [ ! -f set-desktop.sh ]; then
 		curl -o "set-desktop.sh" -L https://raw.githubusercontent.com/tech-otaku/macos-desktop/master/set-desktop.sh
 		curl -o "options.json" -L https://raw.githubusercontent.com/tech-otaku/macos-desktop/master/options.json
 	fi
@@ -1393,66 +1392,66 @@ echo "Configured Finder Icon View Settings"
     if [ "$ModelName" == "imac" ]; then
     
         # System Preferences > Bluetooth > Show Bluetooth in menu bar [checked]
-        	#open /System/Library/CoreServices/Menu\ Extras/Bluetooth.menu								# Comment-out for unchecked
+        	#open /System/Library/CoreServices/Menu\ Extras/Bluetooth.menu                              # * * * Doesn't exist in Big Sur 11.0  * * *
         	
         # System Preferences > Date & Time > Clock > Show date and time in menu bar [checked]
-        	#open /System/Library/CoreServices/Menu\ Extras/Clock.menu									# Comment-out for unchecked
+        	#open /System/Library/CoreServices/Menu\ Extras/Clock.menu                                  # * * * Doesn't exist in Big Sur 11.0  * * *
         	
         # System Preferences > Keyboard > Input Sources > Show Input menu in menu bar [checked]
-			defaults write com.apple.TextInputMenu visible -bool true									# Comment-out for unchecked
+			defaults write com.apple.TextInputMenu visible -bool true                                   # Comment-out for unchecked
 			
 		# System Preferences > Keyboard > Keyboard > Show keyboard and emoji viewers in menu bar [checked]
-			#ShowKeyboardEmojiViewer																	# Comment-out for unchecked
+			#ShowKeyboardEmojiViewer                                                                    # Comment-out for unchecked
 			
 		# System Preferences > Network > Show Wi-Fi status in menu bar [checked]
-    		open /System/Library/CoreServices/Menu\ Extras/AirPort.menu									# Comment-out for unchecked
+    		open /System/Library/CoreServices/Menu\ Extras/AirPort.menu                                 # Comment-out for unchecked
 
-  		# System Preferences > Network > Show VPN status in menu bar [checked]         
-			open /System/Library/CoreServices/Menu\ Extras/VPN.menu										# Comment-out for unchecked
+  		# System Preferences > Network > Show VPN status in menu bar [checked]
+			open /System/Library/CoreServices/Menu\ Extras/VPN.menu                                     # Comment-out for unchecked
 			
-        # System Preferences > Time Machine > Show Time Machine in menu bar [checked]        
-        	open /System/Library/CoreServices/Menu\ Extras/TimeMachine.menu								# Comment-out for unchecked
+        # System Preferences > Time Machine > Show Time Machine in menu bar [checked]
+        	open /System/Library/CoreServices/Menu\ Extras/TimeMachine.menu                             # Comment-out for unchecked
         
         # System Preferences > Volume > Show volume in menu bar [checked] 
-        	#open /System/Library/CoreServices/Menu\ Extras/Volume.menu									# Comment-out for unchecked
+        	#open /System/Library/CoreServices/Menu\ Extras/Volume.menu                                 # * * * Doesn't exist in Big Sur 11.0  * * *
         
         # Script Editor > Preferences > General > Script Menu: Show Script menu in menu bar
-        	open /System/Library/CoreServices/Script\ Menu.app											# Comment-out for unchecked 
+        	open /System/Library/CoreServices/Script\ Menu.app                                          # Comment-out for unchecked 
         	
         
     elif [ "$ModelName" == "macbook" ]; then
     
-    	# Wi-Fi, Battery, Clock, Spotlight and Notifications are visible by default.  
+        # Wi-Fi, Battery, Clock, Spotlight and Notifications are visible by default.  
     
         # System Preferences > Bluetooth > Show Bluetooth in menu bar [checked]
-        	#open /System/Library/CoreServices/Menu\ Extras/Bluetooth.menu								# Comment-out for unchecked
-        	
+            #open /System/Library/CoreServices/Menu\ Extras/Bluetooth.menu                              # * * * Doesn't exist in Big Sur 11.0  * * *
+
         # System Preferences > Date & Time > Clock > Show date and time in menu bar [checked]
-        	#open /System/Library/CoreServices/Menu\ Extras/Clock.menu									# Comment-out for unchecked
-        	
+            #open /System/Library/CoreServices/Menu\ Extras/Clock.menu                                  # * * * Doesn't exist in Big Sur 11.0  * * *
+
         # System Preferences > Energy Saver > Show battery status in menu bar [checked]
-        	#open /System/Library/CoreServices/Menu\ Extras/Battery.menu									# Comment-out for unchecked
-        	
+            #open /System/Library/CoreServices/Menu\ Extras/Battery.menu                                # * * * Doesn't exist in Big Sur 11.0  * * *
+
         # System Preferences > Keyboard > Input Sources > Show Input menu in menu bar [checked]
-			defaults write com.apple.TextInputMenu visible -bool true									# Comment-out for unchecked
-			
-		# System Preferences > Keyboard > Keyboard > Show keyboard and emoji viewers in menu bar [checked]
-			#ShowKeyboardEmojiViewer																	# Comment-out for unchecked
+            defaults write com.apple.TextInputMenu visible -bool true                                   # Comment-out for unchecked
 
-		# System Preferences > Network > Show Wi-Fi status in menu bar [checked]
-    		open /System/Library/CoreServices/Menu\ Extras/AirPort.menu									# Comment-out for unchecked
+        # System Preferences > Keyboard > Keyboard > Show keyboard and emoji viewers in menu bar [checked]
+            #ShowKeyboardEmojiViewer                                                                    # Comment-out for unchecked
 
-  		# System Preferences > Network > Show VPN status in menu bar [checked]         
-			open /System/Library/CoreServices/Menu\ Extras/VPN.menu										# Comment-out for unchecked
-		
+        # System Preferences > Network > Show Wi-Fi status in menu bar [checked]
+            open /System/Library/CoreServices/Menu\ Extras/AirPort.menu                                 # Comment-out for unchecked
+
+        # System Preferences > Network > Show VPN status in menu bar [checked]         
+            open /System/Library/CoreServices/Menu\ Extras/VPN.menubar                                  # Comment-out for unchecked
+
         # System Preferences > Time Machine > Show Time Machine in menu bar [checked]        
-        	open /System/Library/CoreServices/Menu\ Extras/TimeMachine.menu								# Comment-out for unchecked
-        
+            open /System/Library/CoreServices/Menu\ Extras/TimeMachine.menu                             # Comment-out for unchecked
+
         # System Preferences > Volume > Show volume in menu bar [checked] 
-        	#open /System/Library/CoreServices/Menu\ Extras/Volume.menu									# Comment-out for unchecked
-                
+            #open /System/Library/CoreServices/Menu\ Extras/Volume.menu                                 # * * * Doesn't exist in Big Sur 11.0  * * *
+
     fi
-    
+
 echo "Configured Menu Bar Extras"
 
 
@@ -1515,14 +1514,27 @@ echo "Configured Menu Bar Extras"
 # #
 
 # Change the current user's ($USER) photo
+
+    pushd $ScriptPath
+
+    if [ ! -f set-desktop.sh ]; then
+        curl -o set-user-image.sh -L https://raw.githubusercontent.com/tech-otaku/macos-user-image/master/set-user-image.sh
+        curl -o Photos/cow.jpg -L https://github.com/tech-otaku/macos-user-image/raw/master/images/cow.jpg
+        curl -o Photos/giraffe.jpg -L https://github.com/tech-otaku/macos-user-image/raw/master/images/giraffe.jpg
+    fi
+
+    chmod +x set-user-image.sh
+    ./set-user-image.sh -u steve -i "$ScriptPath/Photos/giraffe.jpg"
+    popd
+
     # Source: https://www.jamf.com/jamf-nation/discussions/4332/how-to-change-local-user-account-#picture-through-command-terminal & https://discussions.apple.com/thread/7596877
-    TEMPFILE=$(mktemp)
-    IMAGEFILE="$ScriptPath/Photos/steve-colour.jpg"
-    echo "0x0A 0x5C 0x3A 0x2C dsRecTypeStandard:Users 5 dsAttrTypeStandard:RecordName dsAttrTypeStandard:UniqueID dsAttrTypeStandard:PrimaryGroupID dsAttrTypeStandard:GeneratedUID externalbinary:dsAttrTypeStandard:JPEGPhoto" > ${TEMPFILE}
-    echo ${USER}:${UID}:$(id -g):$(dscl . -read /Users/${USER} GeneratedUID | cut -d' ' -f2):${IMAGEFILE} >> ${TEMPFILE}
-    dscl . -delete /Users/$USER JPEGPhoto
-    dsimport ${TEMPFILE} /Local/Default M -u $USER
-    rm ${TEMPFILE}
+    #TEMPFILE=$(mktemp)
+    #IMAGEFILE="$ScriptPath/Photos/steve-colour.jpg"
+    #echo "0x0A 0x5C 0x3A 0x2C dsRecTypeStandard:Users 5 dsAttrTypeStandard:RecordName dsAttrTypeStandard:UniqueID dsAttrTypeStandard:PrimaryGroupID dsAttrTypeStandard:GeneratedUID externalbinary:dsAttrTypeStandard:JPEGPhoto" > ${TEMPFILE}
+    #echo ${USER}:${UID}:$(id -g):$(dscl . -read /Users/${USER} GeneratedUID | cut -d' ' -f2):${IMAGEFILE} >> ${TEMPFILE}
+    #dscl . -delete /Users/$USER JPEGPhoto
+    #dsimport ${TEMPFILE} /Local/Default M -u $USER
+    #rm ${TEMPFILE}
 
 echo "Updated user photo"
 
