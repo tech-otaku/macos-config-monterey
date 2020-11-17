@@ -8,7 +8,7 @@
 # macOS Big Sur 11.0
 
 #IMAGEFILE="$HOME/macos-config-big-sur-master/Photos/steve-colour.jpg"
-DESKTOP="desert"
+DESKTOP="graphic"
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -1201,26 +1201,26 @@ echo "Configured Finder Icon View Settings"
         	#open /System/Library/CoreServices/Menu\ Extras/Clock.menu                                  # * * * Doesn't exist in Big Sur 11.0  * * *
         	
         # System Preferences > Keyboard > Input Sources > Show Input menu in menu bar [checked]
-			defaults write com.apple.TextInputMenu visible -bool true                                   # Comment-out for unchecked
-			
-		# System Preferences > Keyboard > Keyboard > Show keyboard and emoji viewers in menu bar [checked]
-			#ShowKeyboardEmojiViewer                                                                    # Comment-out for unchecked
-			
-		# System Preferences > Network > Show Wi-Fi status in menu bar [checked]
-    		open /System/Library/CoreServices/Menu\ Extras/AirPort.menu                                 # Comment-out for unchecked
+            defaults write com.apple.TextInputMenu visible -bool true                                   # Comment-out for unchecked
+            
+        # System Preferences > Keyboard > Keyboard > Show keyboard and emoji viewers in menu bar [checked]
+            #ShowKeyboardEmojiViewer                                                                    # Comment-out for unchecked
+            
+        # System Preferences > Network > Show Wi-Fi status in menu bar [checked]
+            open /System/Library/CoreServices/Menu\ Extras/AirPort.menu                                 # Comment-out for unchecked
 
-  		# System Preferences > Network > Show VPN status in menu bar [checked]
-			open /System/Library/CoreServices/Menu\ Extras/VPN.menu                                     # Comment-out for unchecked
-			
+          # System Preferences > Network > Show VPN status in menu bar [checked]
+            #open /System/Library/CoreServices/Menu\ Extras/VPN.menu                                    # * * * Doesn't exist in Big Sur 11.0  * * *
+            
         # System Preferences > Time Machine > Show Time Machine in menu bar [checked]
-        	open /System/Library/CoreServices/Menu\ Extras/TimeMachine.menu                             # Comment-out for unchecked
+            open /System/Library/CoreServices/Menu\ Extras/TimeMachine.menu                             # Comment-out for unchecked
         
         # System Preferences > Volume > Show volume in menu bar [checked] 
-        	#open /System/Library/CoreServices/Menu\ Extras/Volume.menu                                 # * * * Doesn't exist in Big Sur 11.0  * * *
+            #open /System/Library/CoreServices/Menu\ Extras/Volume.menu                                 # * * * Doesn't exist in Big Sur 11.0  * * *
         
         # Script Editor > Preferences > General > Script Menu: Show Script menu in menu bar
-        	open /System/Library/CoreServices/Script\ Menu.app                                          # Comment-out for unchecked 
-        	
+            open /System/Library/CoreServices/Script\ Menu.app                                          # Comment-out for unchecked 
+            
         
     elif [ "$ModelName" == "macbook" ]; then
     
@@ -1245,7 +1245,7 @@ echo "Configured Finder Icon View Settings"
             open /System/Library/CoreServices/Menu\ Extras/AirPort.menu                                 # Comment-out for unchecked
 
         # System Preferences > Network > Show VPN status in menu bar [checked]         
-            open /System/Library/CoreServices/Menu\ Extras/VPN.menubar                                  # Comment-out for unchecked
+            #open /System/Library/CoreServices/Menu\ Extras/VPN.menu                                    # * * * Doesn't exist in Big Sur 11.0  * * *
 
         # System Preferences > Time Machine > Show Time Machine in menu bar [checked]        
             open /System/Library/CoreServices/Menu\ Extras/TimeMachine.menu                             # Comment-out for unchecked
@@ -1320,7 +1320,7 @@ echo "Configured Menu Bar Extras"
 
     pushd $ScriptPath
 
-    if [ ! -f set-desktop.sh ]; then
+    if [ ! -f set-user-image.sh ]; then
         curl -o set-user-image.sh -L https://raw.githubusercontent.com/tech-otaku/macos-user-image/master/set-user-image.sh
         curl -o Photos/cow.jpg -L https://github.com/tech-otaku/macos-user-image/raw/master/images/cow.jpg
         curl -o Photos/giraffe.jpg -L https://github.com/tech-otaku/macos-user-image/raw/master/images/giraffe.jpg
