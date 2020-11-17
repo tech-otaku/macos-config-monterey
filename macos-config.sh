@@ -8,7 +8,7 @@
 # macOS Big Sur 11.0
 
 #IMAGEFILE="$HOME/macos-config-big-sur-master/Photos/steve-colour.jpg"
-DESKTOP="graphic"
+DESKTOP="desert"
 
 
 # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -1327,7 +1327,7 @@ echo "Configured Menu Bar Extras"
     fi
 
     chmod +x set-user-image.sh
-    ./set-user-image.sh -u steve -i "$ScriptPath/Photos/giraffe.jpg"
+    ./set-user-image.sh -u steve -i "$ScriptPath/Photos/steve-colour.jpg"
     popd
 
     # Source: https://www.jamf.com/jamf-nation/discussions/4332/how-to-change-local-user-account-#picture-through-command-terminal & https://discussions.apple.com/thread/7596877
@@ -1344,6 +1344,7 @@ echo "Updated user photo"
 
 # Kill affected applications
     for app in "cfprefsd" \
+        "ControlCenter" \
         "Dock" \
     	"Finder" \
     	"SystemUIServer"; do
