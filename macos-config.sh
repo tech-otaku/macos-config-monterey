@@ -330,12 +330,12 @@ echo "...Desktop & Screensaver"
 # # 3. SYSTEM PREFERENCES > DOCK & MENU BAR
 # #
 
-# System Preferences > Dock > Size
+# System Preferences > Dock & Menu Bar > Size
     # 16 [Small] --> [128] Large
     defaults write com.apple.dock tilesize -int 16
 
 
-# System Preferences > Dock > Magnification
+# System Preferences > Dock & Menu Bar > Magnification
     # checked
     defaults write com.apple.dock magnification -bool true
 
@@ -343,12 +343,12 @@ echo "...Desktop & Screensaver"
     #defaults write com.apple.dock magnification -bool false
 
 
-# System Preferences > Dock > Magnification
+# System Preferences > Dock & Menu Bar > Magnification
     # 16 [Small] --> 128 [Large]
     defaults write com.apple.dock largesize -int 128
 
 
-# System Preferences > Dock > Position on screen
+# System Preferences > Dock & Menu Bar > Position on screen
     # Left
     #defaults write com.apple.dock orientation -string "left"
 
@@ -359,7 +359,7 @@ echo "...Desktop & Screensaver"
     #defaults write com.apple.dock orientation -string "right"
 
 
-# System Preferences > Dock > Minimize windows using
+# System Preferences > Dock & Menu Bar > Minimize windows using
     # Genie effect
     defaults write com.apple.dock mineffect -string "genie"
 
@@ -367,7 +367,7 @@ echo "...Desktop & Screensaver"
     #defaults write com.apple.dock mineffect -string "scale"
 
 
-# System Preferences > Dock > Double click a window's title bar to
+# System Preferences > Dock & Menu Bar > Double click a window's title bar to
     # unchecked
     #defaults write -g AppleActionOnDoubleClick -string "None"
 
@@ -378,7 +378,7 @@ echo "...Desktop & Screensaver"
     defaults write -g AppleActionOnDoubleClick -string "Maximize"
 
 
-# System Preferences > Dock > Minimize windows into application item
+# System Preferences > Dock & Menu Bar > Minimize windows into application item
     # checked
     #defaults write com.apple.dock minimize-to-application -bool true
 
@@ -386,7 +386,7 @@ echo "...Desktop & Screensaver"
     defaults write com.apple.dock minimize-to-application -bool false
 
 
-# System Preferences > Dock > Animate opening applications
+# System Preferences > Dock & Menu Bar > Animate opening applications
     # checked
     defaults write com.apple.dock launchanim -bool true
 
@@ -394,7 +394,7 @@ echo "...Desktop & Screensaver"
     #defaults write com.apple.dock launchanim -bool false
 
 
-# System Preferences > Dock > Autmatically hide and show the Dock
+# System Preferences > Dock & Menu Bar > Autmatically hide and show the Dock
     # checked
     defaults write com.apple.dock autohide -bool true
 
@@ -402,7 +402,7 @@ echo "...Desktop & Screensaver"
     #defaults write com.apple.dock autohide -bool false
 
 
-# System Preferences > Dock > Show indicators for open applications
+# System Preferences > Dock & Menu Bar > Show indicators for open applications
     # checked
     defaults write com.apple.dock show-process-indicators -bool true
 
@@ -410,7 +410,7 @@ echo "...Desktop & Screensaver"
     #defaults write com.apple.dock show-process-indicators -bool false
 
 
-# System Preferences > Dock > Show recent applications in Dock
+# System Preferences > Dock & Menu Bar > Show recent applications in Dock
     # checked
     defaults write com.apple.dock show-recents -bool true
 
@@ -488,7 +488,7 @@ elif [ "$ModelName" == "macbook" ]; then
 
     # Battery Settings [-b]
 
-    # System Preferences > Energy Saver > Battery > Turn display off after:
+    # System Preferences > Battery > Battery > Turn display off after:
         # 1 min [1] --> 3 hrs [180]
         sudo pmset -b displaysleep 1 > /dev/null 2>&1
 
@@ -496,7 +496,7 @@ elif [ "$ModelName" == "macbook" ]; then
         #sudo pmset -b displaysleep 0 > /dev/null 2>&1
 
 
-    # System Preferences > Energy Saver > Battery > Put hard disks to sleep when possible
+    # System Preferences > Battery > Battery > Put hard disks to sleep when possible
         # checked
         #sudo pmset -b disksleep 1 > /dev/null 2>&1
 
@@ -504,7 +504,7 @@ elif [ "$ModelName" == "macbook" ]; then
         sudo pmset -b disksleep 0 > /dev/null 2>&1
 
 
-    # System Preferences > Energy Saver > Battery > Slightly dim the display while on battery power
+    # System Preferences > Battery > Battery > Slightly dim the display while on battery power
         # checked
         sudo pmset -b lessbright 1 > /dev/null 2>&1
 
@@ -512,7 +512,7 @@ elif [ "$ModelName" == "macbook" ]; then
         #sudo pmset -b lessbright 0 > /dev/null 2>&1
 
 
-    # System Preferences > Energy Saver > Battery > Enable Power Nap while on battery power
+    # System Preferences > Battery > Battery > Enable Power Nap while on battery power
         # checked
         #sudo pmset -b powernap 1 > /dev/null 2>&1
 
@@ -522,7 +522,7 @@ elif [ "$ModelName" == "macbook" ]; then
 
     # Power Adapter Settings [-c]
 
-    # System Preferences > Energy Saver > Power Adapter > Turn display off after:
+    # System Preferences > Battery > Power Adapter > Turn display off after:
         # 1 min [1] --> 3 hrs [180]
         sudo pmset -c displaysleep 1 > /dev/null 2>&1
 
@@ -530,7 +530,7 @@ elif [ "$ModelName" == "macbook" ]; then
         #sudo pmset -c displaysleep 0 > /dev/null 2>&1
 
 
-    # System Preferences > Energy Saver > Power Adapter > Prevent computer from sleeping automatically when the display is off
+    # System Preferences > Battery > Power Adapter > Prevent computer from sleeping automatically when the display is off
         # checked (Yes. When this option is checked `sleep` = 0)
         sudo pmset -c sleep 0 > /dev/null 2>&1
 
@@ -538,7 +538,7 @@ elif [ "$ModelName" == "macbook" ]; then
         #sudo pmset -c sleep 1 > /dev/null 2>&1
 
 
-    # System Preferences > Energy Saver > Power Adapter > Put hard disks to sleep when possible
+    # System Preferences > Battery > Power Adapter > Put hard disks to sleep when possible
         # checked
         #sudo pmset -c disksleep 1 > /dev/null 2>&1
 
@@ -546,7 +546,7 @@ elif [ "$ModelName" == "macbook" ]; then
         sudo pmset -c disksleep 0 > /dev/null 2>&1
 
 
-    # System Preferences > Energy Saver > Power Adapter > Wake for Wi-Fi network access
+    # System Preferences > Battery > Power Adapter > Wake for Wi-Fi network access
         # checked
         #sudo pmset -c womp 1 > /dev/null 2>&1
 
@@ -554,7 +554,7 @@ elif [ "$ModelName" == "macbook" ]; then
         sudo pmset -c womp 0  > /dev/null 2>&1
 
 
-    # System Preferences > Energy Saver > Power Adapter > Enable Power Nap while plugged into a power adapter
+    # System Preferences > Battery > Power Adapter > Enable Power Nap while plugged into a power adapter
         # checked
         #sudo pmset -c powernap 1 > /dev/null 2>&1
 
@@ -663,7 +663,7 @@ echo "...Sharing"
 # # 27. DATE & TIME
 # #
 
-# System Preferences > Date & Time > Time options
+# System Preferences > Dock & Menu Bar > Clock > Time options
     # Analog
     #defaults write com.apple.menuextra.clock IsAnalog -bool true
 
@@ -671,7 +671,7 @@ echo "...Sharing"
     defaults write com.apple.menuextra.clock IsAnalog -bool false
 
 
-# System Preferences > Date & Time > Flash the time separators
+# System Preferences > Dock & Menu Bar > Clock > Flash the time separators
     # checked
     #defaults write com.apple.menuextra.clock FlashDateSeparators -bool true
 
@@ -679,220 +679,23 @@ echo "...Sharing"
     defaults write com.apple.menuextra.clock FlashDateSeparators -bool false
 
 
-# Thu 18 Aug 23:46:18
-# System Preferences > Date & Time > Display time with seconds - Checked [:ss]
-# System Preferences > Date & Time > Use a 24-hour clock - Checked [HH:mm]
-# System Preferences > Date & Time > Show AM/PM - Unchecked
-# System Preferences > Date & Time > Show the day of the week - Checked [EEE]
-# System Preferences > Date & Time > Show date - Checked [d MMM]
-	# defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM HH:mm:ss"
-
-
-# Thu 23:46:18
-# System Preferences > Date & Time > Display time with seconds - Checked [:ss]
-# System Preferences > Date & Time > Use a 24-hour clock - Checked [HH:mm]
-# System Preferences > Date & Time > Show AM/PM - Unchecked
-# System Preferences > Date & Time > Show the day of the week - Checked [EEE]
-# System Preferences > Date & Time > Show date - Unchecked
-	# defaults write com.apple.menuextra.clock DateFormat -string "EEE HH:mm:ss"
-
-
-# 18 Aug 23:46:18
-# System Preferences > Date & Time > Display time with seconds - Checked [:ss]
-# System Preferences > Date & Time > Use a 24-hour clock - Checked [HH:mm]
-# System Preferences > Date & Time > Show AM/PM - Unchecked
-# System Preferences > Date & Time > Show the day of the week - Unchecked
-# System Preferences > Date & Time > Show date - Checked [d MMM]
-	# defaults write com.apple.menuextra.clock DateFormat -string "d MMM HH:mm:ss"
-
-
-# 23:46:18
-# System Preferences > Date & Time > Display time with seconds - Checked [:ss]
-# System Preferences > Date & Time > Use a 24-hour clock - Checked [HH:mm]
-# System Preferences > Date & Time > Show AM/PM - Unchecked
-# System Preferences > Date & Time > Show the day of the week - Unchecked
-# System Preferences > Date & Time > Show date - Unchecked
-	# defaults write com.apple.menuextra.clock DateFormat -string "HH:mm:ss"
-
-
-# Thu 18 Aug 11:46:18 pm
-# System Preferences > Date & Time > Display time with seconds - Checked [:ss]
-# System Preferences > Date & Time > Use a 24-hour clock - Unchecked
-# System Preferences > Date & Time > Show AM/PM - Checked [a]
-# System Preferences > Date & Time > Show the day of the week - Checked [EEE]
-# System Preferences > Date & Time > Show date - Checked [d MMM]
-	# defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM h:mm:ss a"
-
-
-# Thu 11:46:18 pm
-# System Preferences > Date & Time > Display time with seconds - Checked [:ss]
-# System Preferences > Date & Time > Use a 24-hour clock - Unchecked
-# System Preferences > Date & Time > Show AM/PM - Checked [a]
-# System Preferences > Date & Time > Show the day of the week - Checked [EEE]
-# System Preferences > Date & Time > Show date - Unchecked
-	# defaults write com.apple.menuextra.clock DateFormat -string "EEE h:mm:ss a"
-
-
-# 18 Aug 11:46:18 pm
-# System Preferences > Date & Time > Display time with seconds - Checked [:ss]
-# System Preferences > Date & Time > Use a 24-hour clock - Unchecked
-# System Preferences > Date & Time > Show AM/PM - Checked [a]
-# System Preferences > Date & Time > Show the day of the week - Unchecked
-# System Preferences > Date & Time > Show date - Checked [d MMM]
-	# defaults write com.apple.menuextra.clock DateFormat -string "d MMM h:mm:ss a"
-
-
-# 11:46:18 pm
-# System Preferences > Date & Time > Display time with seconds - Checked [:ss]
-# System Preferences > Date & Time > Use a 24-hour clock - Unchecked
-# System Preferences > Date & Time > Show AM/PM - Checked [a]
-# System Preferences > Date & Time > Show the day of the week - Unchecked
-# System Preferences > Date & Time > Show date - Unchecked
-	# defaults write com.apple.menuextra.clock DateFormat -string "h:mm:ss a"
-
-
-# Thu 18 Aug 11:46:18
-# System Preferences > Date & Time > Display time with seconds - Checked [:ss]
-# System Preferences > Date & Time > Use a 24-hour clock - Unchecked
-# System Preferences > Date & Time > Show AM/PM - Unchecked
-# System Preferences > Date & Time > Show the day of the week - Checked [EEE]
-# System Preferences > Date & Time > Show date - Checked [d MMM]
-	# defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM h:mm:ss"
-
-
-# Thu 11:46:18
-# System Preferences > Date & Time > Display time with seconds - Checked [:ss]
-# System Preferences > Date & Time > Use a 24-hour clock - Unchecked
-# System Preferences > Date & Time > Show AM/PM - Unchecked
-# System Preferences > Date & Time > Show the day of the week - Checked [EEE]
-# System Preferences > Date & Time > Show date - Unchecked
-	# defaults write com.apple.menuextra.clock DateFormat -string "EEE h:mm:ss"
-
-
-# 18 Aug 11:46:18
-# System Preferences > Date & Time > Display time with seconds - Checked [:ss]
-# System Preferences > Date & Time > Use a 24-hour clock - Unchecked
-# System Preferences > Date & Time > Show AM/PM - Unchecked
-# System Preferences > Date & Time > Show the day of the week - Unchecked
-# System Preferences > Date & Time > Show date - Checked [d MMM]
-	# defaults write com.apple.menuextra.clock DateFormat -string "d MMM h:mm:ss"
-
-
-# 11:46:18
-# System Preferences > Date & Time > Display time with seconds - Checked [:ss]
-# System Preferences > Date & Time > Use a 24-hour clock - Unchecked
-# System Preferences > Date & Time > Show AM/PM - Unchecked
-# System Preferences > Date & Time > Show the day of the week - Unchecked
-# System Preferences > Date & Time > Show date - Unchecked
-	# defaults write com.apple.menuextra.clock DateFormat -string "h:mm:ss"
-
-
 # Thu 18 Aug 23:46
-# System Preferences > Date & Time > Display time with seconds - Unchecked
-# System Preferences > Date & Time > Use a 24-hour clock - Checked [HH:mm]
-# System Preferences > Date & Time > Show AM/PM - Unchecked
-# System Preferences > Date & Time > Show the day of the week - Checked [EEE]
-# System Preferences > Date & Time > Show date - Checked [d MMM]
-	defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM HH:mm"
+# System Preferences > Dock & Menu Bar > Clock > Display time with seconds - Unchecked
+# System Preferences > Dock & Menu Bar > Clock > Use a 24-hour clock - Checked [HH:mm]
+# System Preferences > Dock & Menu Bar > Clock > Show AM/PM - Unchecked
+# System Preferences > Dock & Menu Bar > Clock > Show the day of the week - Checked [EEE]
+# System Preferences > Dock & Menu Bar > Clock > Show date - Checked [d MMM]
+# System Preferences > Language & Region > General > 24-Hour Time - Checked
 
+    pushd $ScriptPath
 
-# Thu 23:46
-# System Preferences > Date & Time > Display time with seconds - Unchecked
-# System Preferences > Date & Time > Use a 24-hour clock - Checked [HH:mm]
-# System Preferences > Date & Time > Show AM/PM - Unchecked
-# System Preferences > Date & Time > Show the day of the week - Checked [EEE]
-# System Preferences > Date & Time > Show date - Unchecked
-	# defaults write com.apple.menuextra.clock DateFormat -string "EEE HH:mm"
+    if [ ! -f menu-bar-clock.sh ]; then
+        curl -o menu-bar-clock.sh -L https://raw.githubusercontent.com/tech-otaku/menu-bar-clock/main/menu-bar-clock.sh
+    fi
 
-
-# 18 Aug 23:46
-# System Preferences > Date & Time > Display time with seconds - Unchecked
-# System Preferences > Date & Time > Use a 24-hour clock - Checked [HH:mm]
-# System Preferences > Date & Time > Show AM/PM - Unchecked
-# System Preferences > Date & Time > Show the day of the week - Unchecked
-# System Preferences > Date & Time > Show date - Checked [d MMM]
-	# defaults write com.apple.menuextra.clock DateFormat -string "d MMM HH:mm"
-
-
-# 23:46
-# System Preferences > Date & Time > Display time with seconds - Unchecked
-# System Preferences > Date & Time > Use a 24-hour clock - Checked [HH:mm]
-# System Preferences > Date & Time > Show AM/PM - Unchecked
-# System Preferences > Date & Time > Show the day of the week - Unchecked
-# System Preferences > Date & Time > Show date - Unchecked
-	# defaults write com.apple.menuextra.clock DateFormat -string "HH:mm"
-
-
-# Thu 18 Aug 11:46 pm
-# System Preferences > Date & Time > Display time with seconds - Unchecked
-# System Preferences > Date & Time > Use a 24-hour clock - Unchecked
-# System Preferences > Date & Time > Show AM/PM - Checked [a]
-# System Preferences > Date & Time > Show the day of the week - Checked [EEE]
-# System Preferences > Date & Time > Show date - Checked [d MMM]
-	# defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM h:mm a"
-
-
-# Thu 11:46 pm
-# System Preferences > Date & Time > Display time with seconds - Unchecked
-# System Preferences > Date & Time > Use a 24-hour clock - Unchecked
-# System Preferences > Date & Time > Show AM/PM - Checked [a]
-# System Preferences > Date & Time > Show the day of the week - Checked [EEE]
-# System Preferences > Date & Time > Show date - Unchecked
-	# defaults write com.apple.menuextra.clock DateFormat -string "EEE h:mm a"
-
-
-# 18 Aug 11:46 pm
-# System Preferences > Date & Time > Display time with seconds - Unchecked
-# System Preferences > Date & Time > Use a 24-hour clock - Unchecked
-# System Preferences > Date & Time > Show AM/PM - Checked [a]
-# System Preferences > Date & Time > Show the day of the week - Unchecked
-# System Preferences > Date & Time > Show date - Checked [d MMM]
-	# defaults write com.apple.menuextra.clock DateFormat -string "d MMM h:mm a"
-
-
-# 11:46 pm
-# System Preferences > Date & Time > Display time with seconds - Unchecked
-# System Preferences > Date & Time > Use a 24-hour clock - Unchecked
-# System Preferences > Date & Time > Show AM/PM - Checked [a]
-# System Preferences > Date & Time > Show the day of the week - Unchecked
-# System Preferences > Date & Time > Show date - Unchecked
-	# defaults write com.apple.menuextra.clock DateFormat -string "h:mm a"
-
-
-# Thu 18 Aug 11:46
-# System Preferences > Date & Time > Display time with seconds - Unchecked
-# System Preferences > Date & Time > Use a 24-hour clock - Unchecked
-# System Preferences > Date & Time > Show AM/PM - Unchecked
-# System Preferences > Date & Time > Show the day of the week - Checked [EEE]
-# System Preferences > Date & Time > Show date - Checked [d MMM]
-	# defaults write com.apple.menuextra.clock DateFormat -string "EEE d MMM h:mm"
-
-
-# Thu 11:46
-# System Preferences > Date & Time > Display time with seconds - Unchecked
-# System Preferences > Date & Time > Use a 24-hour clock - Unchecked
-# System Preferences > Date & Time > Show AM/PM - Unchecked
-# System Preferences > Date & Time > Show the day of the week - Checked [EEE]
-# System Preferences > Date & Time > Show date - Unchecked
-	# defaults write com.apple.menuextra.clock DateFormat -string "EEE h:mm"
-
-
-# 18 Aug 11:46
-# System Preferences > Date & Time > Display time with seconds - Unchecked
-# System Preferences > Date & Time > Use a 24-hour clock - Unchecked
-# System Preferences > Date & Time > Show AM/PM - Unchecked
-# System Preferences > Date & Time > Show the day of the week - Unchecked
-# System Preferences > Date & Time > Show date - Checked [d MMM]
-	# defaults write com.apple.menuextra.clock DateFormat -string "d MMM h:mm"
-
-
-# 11:46
-# System Preferences > Date & Time > Display time with seconds - Unchecked
-# System Preferences > Date & Time > Use a 24-hour clock - Unchecked
-# System Preferences > Date & Time > Show AM/PM - Unchecked
-# System Preferences > Date & Time > Show the day of the week - Unchecked
-# System Preferences > Date & Time > Show date - Unchecked
-	# defaults write com.apple.menuextra.clock DateFormat -string "h:mm"
+    chmod +x menu-bar-clock.sh
+    ./menu-bar-clock.sh "EEE d MMM HH:mm"
+    popd
 
 echo "...Date & Time"
 
