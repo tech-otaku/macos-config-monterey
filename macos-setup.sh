@@ -22,7 +22,7 @@ main () {	# See https://stackoverflow.com/questions/13588457/forward-function-de
 
 	if [ ! -f ~/.source ]; then
 		echo "Please wait...."
-        echo $(find /Users/steve -name TM*) > ~/.source
+        echo $(find /Users/steve -name TM* -maxdepth 1) > ~/.source
     fi
 
     SOURCE=$(cat ~/.source)
@@ -163,7 +163,7 @@ main () {	# See https://stackoverflow.com/questions/13588457/forward-function-de
 			move_directory_entry "F" "$SOURCE/Library/Preferences/net.publicspace.abfr10.plist" "/Users/steve/Library/Preferences/net.publicspace.abfr10.plist"
 			;;
 		adguard)		# AdGuard.app
-			move_directory_entry "D" "$SOURCE/Library/Application Support/com.adguard.mac.adguard" "/Users/steve/Library/Application Support/com.adguard.mac.adguard"
+			move_directory_entry "D" "$SOURCE/Library/Group Containers/TC3Q7MAJXF.com.adguard.mac" "/Users/steve/Library/Group Containers/TC3Q7MAJXF.com.adguard.mac"
 			move_directory_entry "F" "$SOURCE/Library/Preferences/com.adguard.mac.adguard.plist" "/Users/steve/Library/Preferences/com.adguard.mac.adguard.plist"
 			;;
 		adobe)			# Adobe Acrobat Reader DC.app
@@ -557,7 +557,7 @@ main () {	# See https://stackoverflow.com/questions/13588457/forward-function-de
 		# * * * * MISCELLANEOUS * * * *
 		bash)
 			#create_symbolic_link "/Users/steve/Dropbox/.bash_history_shared" "/Users/steve/.bash_history"
-			create_symbolic_link "${HOME}/Library/Mobile Documents/com~apple~CloudDocs/bash/.bash_profile_shared" "${HOME}/.bash_profile"
+			create_symbolic_link "${HOME}/Library/Mobile Documents/com~apple~CloudDocs/bash/.bash_profile" "${HOME}/.bash_profile"
 			if [ -f "$SOURCE/.hushlogin" ]; then
 				move_directory_entry "F" "$SOURCE/.hushlogin" "${HOME}/.hushlogin"
 			fi

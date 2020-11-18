@@ -1277,7 +1277,7 @@ echo "Configured Menu Bar Extras"
 	
 #	cat <<'EOF' | sudo tee /var/root/.profile
 #printf "Sourcing /var/root/.profile\n\n"
-#
+
 #export PS1="\[\e[1;31m\]\u\[\e[0m\]: \[\e[1m\]\W\[\e[0m\] \[\e[36m\]$\[\e[0m\] "
 #EOF
 
