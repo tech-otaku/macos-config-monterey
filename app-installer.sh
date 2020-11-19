@@ -121,6 +121,14 @@ case "$1" in
 		cp -r /Volumes/Querious\ ${QUERIOUS}/Querious.app /Applications/Querious.app
 		hdiutil detach /Volumes/Querious\ ${QUERIOUS}
 		;;
+	vscode)
+		[ -f ~/Downloads/VSCode-darwin-stable.zip ] && rm ~/Downloads/VSCode-darwin-stable.zip
+		curl -o ~/Downloads/VSCode-darwin-stable.zip -L https://az764295.vo.msecnd.net/stable/e5a624b788d92b8d34d1392e4c4d9789406efe8f/VSCode-darwin-stable.zip
+		cd ~/Downloads
+		unzip -o ~/Downloads/VSCode-darwin-stable.zip 
+		[ -d /Applications/Visual\ Studio\ Code.app ] && rm -rf /Applications/Visual\ Studio\ Code.app
+		mv ~/Downloads/Visual\ Studio\ Code.app /Applications
+		;;
 	*)
 		echo "ERROR: Application '$1' invalid."
 		exit 1
