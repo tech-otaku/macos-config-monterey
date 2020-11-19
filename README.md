@@ -1,2 +1,1 @@
-# macos-config-big-sur
- 
+# macos-config-catalina
