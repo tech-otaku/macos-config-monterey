@@ -369,7 +369,7 @@ main () {	# See https://stackoverflow.com/questions/13588457/forward-function-de
 		maps)			# Maps.app
 			;;
 		marsedit)		# MarsEdit.app
-			move_directory_entry "D" "$SOURCE/Library/Application Support/MarsEdit" "/Users/steve/Library/Application Support/MarsEdit"
+			move_directory_entry "D" "$SOURCE/Library/Group Containers/493CVA9A35.com.red-sweater" "/Users/steve/Library/Group Containers/493CVA9A35.com.red-sweater"
 			move_directory_entry "F" "$SOURCE/Library/Preferences/com.red-sweater.marsedit.plist" "/Users/steve/Library/Preferences/com.red-sweater.marsedit.plist"
 			;;
 		memoryclean)	# Memory Clean.app
