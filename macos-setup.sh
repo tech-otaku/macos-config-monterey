@@ -514,7 +514,7 @@ main () {	# See https://stackoverflow.com/questions/13588457/forward-function-de
 			;;
 		vscode)			# Visual Studio Code.app
 			move_directory_entry "D" "$SOURCE/Library/Application Support/Code" "/Users/steve/Library/Application Support/Code"
-			move_directory_entry "F" "$SOURCE/.vscode" "/Users/steve/.vscode"
+			move_directory_entry "D" "$SOURCE/.vscode" "/Users/steve/.vscode"
 			;;
 		whitenoise)		# WhiteNoiseFree.app
 			;;
