@@ -6,7 +6,7 @@
 # directories appear in iCloud Drive in the Finder even though i) they have previously been deleted locally and ii) they don't appear to exist at icloud.com  
 
 # Names of orphaned directories on iCloud Drive to delete
-declare -a orphans=("apple~configurator~ui" "flashcardhero~mas" "comcsoft~iterminal" "27N4MQEA55~pro~writer" "iCloud~net~shinyfrog~bear" "monosnap~monosnap" "translatoria~scanandtranslatefree2" "smartloftapps~phototranslatefree2")
+declare -a orphans=("apple~configurator~ui" "apple~Playgrounds" "flashcardhero~mas" "comcsoft~iterminal" "27N4MQEA55~pro~writer" "iCloud~net~shinyfrog~bear" "monosnap~monosnap" "translatoria~scanandtranslatefree2" "smartloftapps~phototranslatefree2")
 
 # Parent directory containing the orphaned directories
 SOURCE="${HOME}/Library/Mobile Documents"

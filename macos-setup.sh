@@ -153,7 +153,7 @@ main () {	# See https://stackoverflow.com/questions/13588457/forward-function-de
 		# * * * * APPLICATIONS * * * *
 		1pass)			# 1Password Command-Line Tool
 			move_directory_entry "D" "$SOURCE/.1pass" "/Users/steve/.1pass"
-			move_directory_entry "D" "$SOURCE/.op" "/Users/steve/.op"
+			#move_directory_entry "D" "$SOURCE/.op" "/Users/steve/.op"
 			;;
 		finderatt)		# A Better Finder Attributes 6.app
 			move_directory_entry "F" "$SOURCE/Library/Preferences/net.publicspace.abfa6.plist" "/Users/steve/Library/Preferences/net.publicspace.abfa6.plist"
