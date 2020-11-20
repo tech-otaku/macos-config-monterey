@@ -390,6 +390,10 @@ main () {	# See https://stackoverflow.com/questions/13588457/forward-function-de
 			;;
 		noip)			# No-IP DUC.app
 			;;
+		notable)		# NetBeans
+			move_directory_entry "F" "$SOURCE/.notable.json" "/Users/steve/.notable.json"
+			#move_directory_entry "D" "$SOURCE/Sundry/NetBeansProjects" "/Users/steve/Sundry/NetBeansProjects"
+			;;
 		notes)			# Notes.app
 			;;
 		office)			# MS Office 365
