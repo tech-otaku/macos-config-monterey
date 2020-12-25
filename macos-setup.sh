@@ -153,7 +153,12 @@ main () {	# See https://stackoverflow.com/questions/13588457/forward-function-de
 		# * * * * APPLICATIONS * * * *
 		1pass)			# 1Password Command-Line Tool
 			move_directory_entry "D" "$SOURCE/.1pass" "/Users/steve/.1pass"
-			#move_directory_entry "D" "$SOURCE/.op" "/Users/steve/.op"
+            if [ -d "$SOURCE/.op" ]; then
+			    move_directory_entry "D" "$SOURCE/.op" "/Users/steve/.op"
+            elif [ -d "$SOURCE/config/.op" ]; then
+                [ ! -d "/Users/steve/.config" ] && mkdir "/Users/steve/.config"
+                move_directory_entry "D" "$SOURCE/config/.op" "/Users/steve/config/.op"
+            fi
 			;;
 		finderatt)		# A Better Finder Attributes 6.app
 			move_directory_entry "F" "$SOURCE/Library/Preferences/net.publicspace.abfa6.plist" "/Users/steve/Library/Preferences/net.publicspace.abfa6.plist"
@@ -221,7 +226,9 @@ main () {	# See https://stackoverflow.com/questions/13588457/forward-function-de
 			# move_directory_entry "D" "$SOURCE/Library/Caches/com.barebones.bbedit" "/Users/steve/Library/Caches/com.barebones.bbedit"
 			move_directory_entry "D" "$SOURCE/Library/Containers/com.barebones.bbedit" "/Users/steve/Library/Containers/com.barebones.bbedit"
 			move_directory_entry "D" "$SOURCE/Library/Application Scripts/com.barebones.bbedit" "/Users/steve/Library/Application Scripts/com.barebones.bbedit"
-			
+		books)	# Books.app
+        /Users/steve/Library/Containers/com.apple.BKAgentService
+			move_directory_entry "D" "$SOURCE/Library/Containers/com.apple.BKAgentService" "/Users/steve/Library/Containers/com.apple.BKAgentService"
 			;;
 		boxsync) 		# Box Sync.app
 			# * * * * DO NOT USE - SIMPLY INSTALL BOX SYNC * * * *
@@ -294,7 +301,8 @@ main () {	# See https://stackoverflow.com/questions/13588457/forward-function-de
 			move_directory_entry "F" "$SOURCE/Library/Preferences/com.google.Chrome.plist" "/Users/steve/Library/Preferences/com.google.Chrome.plist"
 			;;
 		hcloud)
-			move_directory_entry "D" "$SOURCE/.config" "/Users/steve/.config"
+            [ ! -d "/Users/steve/.config" ] && mkdir "/Users/steve/.config"
+			move_directory_entry "D" "$SOURCE/.config/hcloud" "/Users/steve/.config/hcloud"
 			;;
 		hewlett)		# Hewlett-Packard
 			;;
