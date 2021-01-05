@@ -226,6 +226,7 @@ main () {	# See https://stackoverflow.com/questions/13588457/forward-function-de
 			# move_directory_entry "D" "$SOURCE/Library/Caches/com.barebones.bbedit" "/Users/steve/Library/Caches/com.barebones.bbedit"
 			move_directory_entry "D" "$SOURCE/Library/Containers/com.barebones.bbedit" "/Users/steve/Library/Containers/com.barebones.bbedit"
 			move_directory_entry "D" "$SOURCE/Library/Application Scripts/com.barebones.bbedit" "/Users/steve/Library/Application Scripts/com.barebones.bbedit"
+            ;;
 		books)	# Books.app
         /Users/steve/Library/Containers/com.apple.BKAgentService
 			move_directory_entry "D" "$SOURCE/Library/Containers/com.apple.BKAgentService" "/Users/steve/Library/Containers/com.apple.BKAgentService"
