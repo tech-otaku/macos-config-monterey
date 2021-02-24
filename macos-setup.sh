@@ -505,6 +505,10 @@ main () {	# See https://stackoverflow.com/questions/13588457/forward-function-de
 			;;
 		timemachine)	# Time Machine.app
 			;;
+		typora)		    # Typora
+			move_directory_entry "D" "$SOURCE/Library/Application Support/abnerworks.Typora" "/Users/steve/Library/Application Support/abnerworks.Typora"
+			move_directory_entry "F" "$SOURCE/Library/Preferences/abnerworks.Typora.plist" "/Users/steve/Library/Preferences/abnerworks.Typora.plist"
+			;;
 		vmware)			# VMware Fusion.app
 			#move_directory_entry "D" "$SOURCE/VMWare" "/Users/steve/VMWare"
 			SRC="/Volumes/ChronoSync Users Data/Users/steve/VMware/"

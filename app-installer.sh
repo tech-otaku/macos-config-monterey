@@ -121,6 +121,13 @@ case "$1" in
         cp -r /Volumes/Querious\ ${QUERIOUS}/Querious.app /Applications/Querious.app
         hdiutil detach /Volumes/Querious\ ${QUERIOUS}
         ;;
+    typora)
+        [ -f ~/Downloads/Typora.dmg ] && rm ~/Downloads/Typora.dmg
+        curl -o ~/Downloads/Typora.dmg -L https://typora.io/download/Typora.dmg
+        yes | hdiutil attach ~/Downloads/Typora.dmg > /dev/null
+        cp -r /Volumes/Typora/Typora.app /Applications/Typora.app
+        hdiutil detach /Volumes/Typora
+        ;;
     vscode)
         [ -f ~/Downloads/VSCode-darwin-stable.zip ] && rm ~/Downloads/VSCode-darwin-stable.zip
         curl -o ~/Downloads/VSCode-darwin-stable.zip -L https://az764295.vo.msecnd.net/stable/e5a624b788d92b8d34d1392e4c4d9789406efe8f/VSCode-darwin-stable.zip
