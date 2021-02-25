@@ -510,23 +510,27 @@ main () {	# See https://stackoverflow.com/questions/13588457/forward-function-de
 			;;
 		vmware)			# VMware Fusion.app
 			#move_directory_entry "D" "$SOURCE/VMWare" "/Users/steve/VMWare"
-			SRC="/Volumes/ChronoSync Users Data/Users/steve/VMware/"
-			TRG="/Users/steve/VMware"
-			if [ -d "$TRG" ]; then
-				echo "ERROR: The target folder \"$TRG\" already exists."
-				return
-			elif [ -d "$SRC" ]; then
-				echo "Copying \"$SRC\" to \"$TRG\"..."
-				mkdir "$TRG"
-				cp -pR "$SRC" "$TRG"
-				if [ $? == 0 ]; then
-					echo `date '+%Y-%m-%d %H:%M:%S'` "[D505:$APP] Copied source folder \"$SRC\" to target folder \"$TRG\"" >> ~/$LOG
-					move_directory_entry "D" "$SOURCE/Library/Application Support/VMware Fusion" "/Users/steve/Library/Application Support/VMware Fusion"
-					move_directory_entry "D" "$SOURCE/Library/Preferences/VMware Fusion" "/Users/steve/Library/Preferences/VMware Fusion"
-				fi
-			else
-				echo `date '+%Y-%m-%d %H:%M:%S'` "[DXXX:$APP] ERROR: Source folder \"$SRC\" does not exist" >> ~/$LOG;
-			fi
+            move_directory_entry "D" "$SOURCE/Library/Application Support/VMware Fusion" "/Users/steve/Library/Application Support/VMware Fusion"
+            move_directory_entry "D" "$SOURCE/Library/Application Support/VMware Fusion Applications Menu" "/Users/steve/Library/Application Support/VMware Fusion Applications Menu"
+            move_directory_entry "D" "$SOURCE/Library/Preferences/VMware Fusion" "/Users/steve/Library/Preferences/VMware Fusion"
+
+#			SRC="/Volumes/ChronoSync Users Data/Users/steve/VMware/"
+#			TRG="/Users/steve/VMware"
+#			if [ -d "$TRG" ]; then
+#				echo "ERROR: The target folder \"$TRG\" already exists."
+#				return
+#			elif [ -d "$SRC" ]; then
+#				echo "Copying \"$SRC\" to \"$TRG\"..."
+#				mkdir "$TRG"
+#				cp -pR "$SRC" "$TRG"
+#				if [ $? == 0 ]; then
+#					echo `date '+%Y-%m-%d %H:%M:%S'` "[D505:$APP] Copied source folder \"$SRC\" to target folder \"$TRG\"" >> ~/$LOG
+#					move_directory_entry "D" "$SOURCE/Library/Application Support/VMware Fusion" "/Users/steve/Library/Application Support/VMware Fusion"
+#					move_directory_entry "D" "$SOURCE/Library/Preferences/VMware Fusion" "/Users/steve/Library/Preferences/VMware Fusion"
+#				fi
+#			else
+#				echo `date '+%Y-%m-%d %H:%M:%S'` "[DXXX:$APP] ERROR: Source folder \"$SRC\" does not exist" >> ~/$LOG;
+#			fi
 			;;
 		vscode)			# Visual Studio Code.app
 			move_directory_entry "D" "$SOURCE/Library/Application Support/Code" "/Users/steve/Library/Application Support/Code"
