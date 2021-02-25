@@ -2,7 +2,7 @@
 
 # USAGE: [bash] ${HOME}/macos-config-catalina-master/app-installer.sh <app>
 
-BBEDIT="13.0.4"
+BBEDIT="13.5.4"
 EVERNOTE="7.13_458080"
 FORKLIFT="3.4.3"
 LITTLESNITCH="4.4.3"

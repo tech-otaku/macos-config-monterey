@@ -155,9 +155,9 @@ main () {	# See https://stackoverflow.com/questions/13588457/forward-function-de
 			move_directory_entry "D" "$SOURCE/.1pass" "/Users/steve/.1pass"
             if [ -d "$SOURCE/.op" ]; then
 			    move_directory_entry "D" "$SOURCE/.op" "/Users/steve/.op"
-            elif [ -d "$SOURCE/config/.op" ]; then
+            elif [ -d "$SOURCE/config/op" ]; then
                 [ ! -d "/Users/steve/.config" ] && mkdir "/Users/steve/.config"
-                move_directory_entry "D" "$SOURCE/config/.op" "/Users/steve/config/.op"
+                move_directory_entry "D" "$SOURCE/config/op" "/Users/steve/config/op"
             fi
 			;;
 		finderatt)		# A Better Finder Attributes 6.app
