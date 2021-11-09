@@ -110,7 +110,7 @@ EOD
 # #
 
 # System Preferences > General > Appearance
-    # Light (For this mode neither "AppleInterfaceStyle" nor "AppleInterfaceStyleSwitchesAutomatically" mustn't exist so delete them both)
+    # Light (For this mode neither "AppleInterfaceStyle" nor "AppleInterfaceStyleSwitchesAutomatically" must exist, so delete them both)
     #defaults delete -g AppleInterfaceStyle 2> /dev/null     						# Defaults throws an error if the key does not exist, so write STDERR to /dev/null to surpress error messages
     #defaults delete -g AppleInterfaceStyleSwitchesAutomatically 2> /dev/null		# Defaults throws an error if the key does not exist, so write STDERR to /dev/null to surpress error messages
     
@@ -204,7 +204,7 @@ EOD
     
 # System Preferences > General > Allow wallpapaer tinting in windows
 	# checked
-    defaults write -g AppleReduceDesktopTinting -bool false
+    #defaults write -g AppleReduceDesktopTinting -bool false
     
     # unchecked
     defaults write -g AppleReduceDesktopTinting -bool true
