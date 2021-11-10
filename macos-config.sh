@@ -94,10 +94,16 @@ EOD
 
     if [ ! -z $VM ]; then   # Guest OS in a VMware VM
         ModelName="imac"
-        DesktopPicture="beach"
-    else
-        DesktopPicture="desert"
+        #DesktopPicture="beach"
+    #else
+        #DesktopPicture="desert"
     fi
+
+# As of macOS 12 Monterey, The default 'Monterey Graphic' (graphic) is one of a limited number of Apple-supplied Desktop images available on a vanilla install of macOS
+    DesktopPicture="graphic"
+
+
+    
 
     ShowKeyboardEmojiViewer () {
     
