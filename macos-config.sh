@@ -282,7 +282,14 @@ EOD
 
 
 # System Preferences > General > Allow Handoff between this Mac and your iCloud devices
-    # GUI Scripting: ./Scripts/Config\ All.scpt <delay-interval>
+# NOTE: -currentHost refers to the domain in the 'ByHost' sub-directory
+    # checked 
+        defaults -currentHost write com.apple.coreservices.useractivityd ActivityAdvertisingAllowed -bool true
+        defaults -currentHost write com.apple.coreservices.useractivityd ActivityReceivingAllowed -bool true
+
+    # unchecked 
+        #defaults -currentHost write com.apple.coreservices.useractivityd ActivityAdvertisingAllowed -bool false
+        #defaults -currentHost write com.apple.coreservices.useractivityd ActivityReceivingAllowed -bool false
 
 
 # System Preferences > General > Use font smoothing when available
