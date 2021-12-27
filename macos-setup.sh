@@ -155,9 +155,9 @@ main () {	# See https://stackoverflow.com/questions/13588457/forward-function-de
 			move_directory_entry "D" "$SOURCE/.1pass" "/Users/steve/.1pass"
             if [ -d "$SOURCE/.op" ]; then
 			    move_directory_entry "D" "$SOURCE/.op" "/Users/steve/.op"
-            elif [ -d "$SOURCE/config/op" ]; then
+            elif [ -d "$SOURCE/.config/op" ]; then
                 [ ! -d "/Users/steve/.config" ] && mkdir "/Users/steve/.config"
-                move_directory_entry "D" "$SOURCE/config/op" "/Users/steve/config/op"
+                move_directory_entry "D" "$SOURCE/.config/op" "/Users/steve/.config/op"
             fi
 			;;
 		finderatt)		# A Better Finder Attributes 6.app
@@ -227,6 +227,9 @@ main () {	# See https://stackoverflow.com/questions/13588457/forward-function-de
 			move_directory_entry "D" "$SOURCE/Library/Containers/com.barebones.bbedit" "/Users/steve/Library/Containers/com.barebones.bbedit"
 			move_directory_entry "D" "$SOURCE/Library/Application Scripts/com.barebones.bbedit" "/Users/steve/Library/Application Scripts/com.barebones.bbedit"
             ;;
+		blacklight)		# Black Light
+			move_directory_entry "D" "$SOURCE/Library/Containers/com.michelf.black-light" "/Users/steve/Library/Containers/com.michelf.black-light"
+			;;
 		books)	# Books.app
 			move_directory_entry "D" "$SOURCE/Library/Containers/com.apple.BKAgentService" "/Users/steve/Library/Containers/com.apple.BKAgentService"
 			;;
@@ -287,7 +290,9 @@ main () {	# See https://stackoverflow.com/questions/13588457/forward-function-de
 			# NONE
 			;;
 		github)			# GitHub Desktop.app
+            move_directory_entry "F" "$SOURCE/.git-commit-message.txt" "/Users/steve/.git-commit-message.txt"
 			move_directory_entry "F" "$SOURCE/.gitconfig" "/Users/steve/.gitconfig"
+            move_directory_entry "F" "$SOURCE/.gitignore_global" "/Users/steve/.gitignore_global"
 			move_directory_entry "D" "$SOURCE/Library/Application Support/GitHub Desktop" "/Users/steve/Library/Application Support/GitHub Desktop"
 			move_directory_entry "D" "$SOURCE/Developer" "/Users/steve/Developer"
 			;;
@@ -581,6 +586,9 @@ main () {	# See https://stackoverflow.com/questions/13588457/forward-function-de
                 create_symbolic_link "${HOME}/Library/Mobile Documents/com~apple~CloudDocs/bash/.bash_profile" "${HOME}/.bash_profile"
                 if [ -f "$SOURCE/.hushlogin" ]; then
                     move_directory_entry "F" "$SOURCE/.hushlogin" "${HOME}/.hushlogin"
+                fi
+                if [ -f "$SOURCE/.profile" ]; then
+                    move_directory_entry "F" "$SOURCE/.profile" "${HOME}/.profile"
                 fi
             else
                 echo "* * * * iCloud has not finished downloading yet. Please try again later * * * *"

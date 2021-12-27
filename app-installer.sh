@@ -3,12 +3,13 @@
 # USAGE: [bash] ${HOME}/macos-config-catalina-master/app-installer.sh <app>
 
 BBEDIT="13.5.4"
+BLACKLIGHT="2.3.5"
 EVERNOTE="7.13_458080"
 FORKLIFT="3.4.3"
 LITTLESNITCH="4.4.3"
 LOGITECH="8.10.64"
 NAVICAT="121"
-QUERIOUS="3.0.11"
+QUERIOUS="3.1.3"
 
 case "$1" in
     adguard)
@@ -33,6 +34,14 @@ case "$1" in
         [ -d /Applications/BBEdit.app ] && rm -rf /Applications/BBEdit.app
         cp -r /Volumes/BBEdit\ ${BBEDIT}/BBEdit.app /Applications/BBEdit.app
         hdiutil detach /Volumes/BBEdit\ ${BBEDIT}
+        ;;
+    blacklight)
+        [ -f ~/Downloads/black-light-${BLACKLIGHT}.zip ] && rm ~/Downloads/black-light-${BLACKLIGHT}.zip
+        curl -o ~/Downloads/black-light-${BLACKLIGHT}.zip -L https://littoral.michelf.ca/apps/black-light/black-light-${BLACKLIGHT}.zip 
+        cd ~/Downloads
+        unzip -o ~/Downloads/black-light-${BLACKLIGHT}.zip
+        [ -d /Applications/Black\ Light.app ] && rm -rf /Applications/Black\ Light.app
+        mv ~/Downloads/Black\ Light.app /Applications
         ;;
     chronosync)
         [ -f ~/Downloads/CS4_Download.dmg ] && rm ~/Downloads/CS4_Download.dmg
@@ -123,7 +132,7 @@ case "$1" in
         ;;
     typora)
         [ -f ~/Downloads/Typora.dmg ] && rm ~/Downloads/Typora.dmg
-        curl -o ~/Downloads/Typora.dmg -L https://typora.io/download/Typora.dmg
+        curl -o ~/Downloads/Typora.dmg -L https://typora.io/mac/Typora.dmg
         yes | hdiutil attach ~/Downloads/Typora.dmg > /dev/null
         cp -r /Volumes/Typora/Typora.app /Applications/Typora.app
         hdiutil detach /Volumes/Typora
