@@ -7,7 +7,7 @@ BLACKLIGHT="2.3.5"
 EVERNOTE="7.13_458080"
 FORKLIFT="3.4.3"
 LITTLESNITCH="4.4.3"
-LOGITECH="8.10.64"
+LOGITECH="9.40.75"
 NAVICAT="121"
 QUERIOUS="3.1.3"
 
@@ -108,10 +108,10 @@ case "$1" in
         open /Volumes/Little\ Snitch\ ${LITTLESNITCH}/Little\ Snitch\ Installer.app
         ;;
     logitech)
-        [ -f ~/Downloads/Options_${LOGITECH}.zip ] && rm ~/Downloads/Options_${LOGITECH}.zip
-        curl -o ~/Downloads/Options_${LOGITECH}.zip -L https://download01.logi.com/web/ftp/pub/techsupport/options/Options_${LOGITECH}.zip
+        [ -f ~/Downloads/options_installer.zip ] && rm ~/Downloads/options_installer.zip
+        curl -o ~/Downloads/options_installer.zip -L https://download01.logi.com/web/ftp/pub/techsupport/options/options_installer.zip
         cd ~/Downloads
-        unzip -o ~/Downloads/Options_${LOGITECH}.zip
+        unzip -o ~/Downloads/options_installer.zip
         open ~/Downloads/LogiMgr\ Installer\ ${LOGITECH}.app
         ;;
     navicat-mysql)
