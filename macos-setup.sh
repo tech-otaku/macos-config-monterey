@@ -160,12 +160,18 @@ main () {	# See https://stackoverflow.com/questions/13588457/forward-function-de
                 move_directory_entry "D" "$SOURCE/.config/op" "/Users/steve/.config/op"
             fi
 			;;
-		finderatt)		# A Better Finder Attributes 6.app
-			move_directory_entry "F" "$SOURCE/Library/Preferences/net.publicspace.abfa6.plist" "/Users/steve/Library/Preferences/net.publicspace.abfa6.plist"
+		finderatt)		# A Better Finder Attributes 7.app
+            if [ -f "$SOURCE/Library/Preferences/ABFSS Registration" ]; then
+                move_directory_entry "F" "$SOURCE/Library/Preferences/ABFSS Registration" "/Users/steve/Library/Preferences/ABFSS Registration"
+            fi 
+			move_directory_entry "F" "$SOURCE/Library/Preferences/net.publicspace.abfa7.plist" "/Users/steve/Library/Preferences/net.publicspace.abfa7.plist"
 			;;
-		finderren) 		# A Better Finder Rename 10.app
-			move_directory_entry "D" "$SOURCE/Library/Application Support/A Better Finder Rename 10" "/Users/steve/Library/Application Support/A Better Finder Rename 10"
-			move_directory_entry "F" "$SOURCE/Library/Preferences/net.publicspace.abfr10.plist" "/Users/steve/Library/Preferences/net.publicspace.abfr10.plist"
+		finderren) 		# A Better Finder Rename 11.app
+            if [ -f "$SOURCE/Library/Preferences/ABFSS Registration" ]; then
+                move_directory_entry "F" "$SOURCE/Library/Preferences/ABFSS Registration" "/Users/steve/Library/Preferences/ABFSS Registration"
+            fi 
+			move_directory_entry "D" "$SOURCE/Library/Application Support/A Better Finder Rename 11" "/Users/steve/Library/Application Support/A Better Finder Rename 11"
+			move_directory_entry "F" "$SOURCE/Library/Preferences/net.publicspace.abfr11.plist" "/Users/steve/Library/Preferences/net.publicspace.abfr11.plist"
 			;;
 		adguard)		# AdGuard.app
 			move_directory_entry "D" "$SOURCE/Library/Group Containers/TC3Q7MAJXF.com.adguard.mac" "/Users/steve/Library/Group Containers/TC3Q7MAJXF.com.adguard.mac"
@@ -212,6 +218,10 @@ main () {	# See https://stackoverflow.com/questions/13588457/forward-function-de
 			move_directory_entry "D" "$SOURCE/Library/Application Support/ATOMIC" "/Users/steve/Library/Application Support/ATOMIC"
 			move_directory_entry "F" "$SOURCE/Library/Preferences/com.micromat.ATOMIC.plist" "/Users/steve/Library/Preferences/com.micromat.ATOMIC.plist"
 			# move_directory_entry "D" "$SOURCE/Library/Caches/com.micromat.ATOMIC" "/Users/steve/Library/Caches/com.micromat.ATOMIC"
+			;;
+		authy) 		# Authy Desktop.app
+			move_directory_entry "D" "$SOURCE/Library/Application Support/Authy Desktop" "/Users/steve/Library/Application Support/Authy Desktop"
+			move_directory_entry "F" "$SOURCE/Library/Preferences/com.authy.authy-mac.plist" "/Users/steve/Library/Preferences/com.authy.authy-mac.plist"
 			;;
 		backuploupe)	# BackupLoupe.app
 			move_directory_entry "D" "$SOURCE/Library/Application Support/BackupLoupe" "/Users/steve/Library/Application Support/BackupLoupe"

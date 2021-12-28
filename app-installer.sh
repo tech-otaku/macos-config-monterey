@@ -2,6 +2,7 @@
 
 # USAGE: [bash] ${HOME}/macos-config-catalina-master/app-installer.sh <app>
 
+AUTHY="1.9.0"
 BBEDIT="13.5.4"
 BLACKLIGHT="2.3.5"
 EVERNOTE="7.13_458080"
@@ -26,6 +27,15 @@ case "$1" in
         [ -d /Applications/Atom.app ] && rm -rf /Applications/Atom.app
         mv ~/Downloads/Atom.app /Applications
         ;;
+    authy)
+        [ -f ~/Downloads/Authy\ Desktop-${AUTHY}.dmg ] && rm ~/Downloads/Authy\ Desktop-${AUTHY}.dmg
+        curl -o ~/Downloads/Authy\ Desktop-${AUTHY}.dmg -L https://s3.amazonaws.com/authy-electron-repository-production/authy/stable/${AUTHY}/darwin/x64/Authy%20Desktop-${AUTHY}.dmg
+        hdiutil attach ~/Downloads/Authy\ Desktop-${AUTHY}.dmg
+        open /Volumes/Authy\ Desktop\ ${AUTHY}
+        [ -d /Applications/Authy\ Desktop.app ] && rm -rf /Applications/Authy\ Desktop.app
+        cp -r /Volumes/Authy\ Desktop\ ${AUTHY}/Authy\ Desktop.app /Applications/Authy\ Desktop.app
+        hdiutil detach /Volumes/Authy\ Desktop\ ${AUTHY}
+        ;;
     bbedit)
         [ -f ~/Downloads/BBEdit_${BBEDIT}.dmg ] && rm ~/Downloads/BBEdit_${BBEDIT}.dmg
         curl -o ~/Downloads/BBEdit_${BBEDIT}.dmg -L https://s3.amazonaws.com/BBSW-download/BBEdit_${BBEDIT}.dmg
@@ -38,10 +48,18 @@ case "$1" in
     blacklight)
         [ -f ~/Downloads/black-light-${BLACKLIGHT}.zip ] && rm ~/Downloads/black-light-${BLACKLIGHT}.zip
         curl -o ~/Downloads/black-light-${BLACKLIGHT}.zip -L https://littoral.michelf.ca/apps/black-light/black-light-${BLACKLIGHT}.zip 
-        cd ~/Downloads
+#        cd ~/Downloads
         unzip -o ~/Downloads/black-light-${BLACKLIGHT}.zip
         [ -d /Applications/Black\ Light.app ] && rm -rf /Applications/Black\ Light.app
         mv ~/Downloads/Black\ Light.app /Applications
+        ;;
+    chrome)
+        [ -f ~/Downloads/googlechrome.dmg ] && rm ~/Downloads/googlechrome.dmg
+        curl -o ~/Downloads/googlechrome.dmg -L https://dl.google.com/chrome/mac/universal/stable/CHFA/googlechrome.dmg
+        hdiutil attach ~/Downloads/googlechrome.dmg
+        [ -d /Applications/Google\ Chrome.app ] && rm -rf /Applications/Google\ Chrome.app
+        cp -r /Volumes/Google\ Chrome/Google\ Chrome.app /Applications/Google\ Chrome.app
+        hdiutil detach /Volumes/Google\ Chrome
         ;;
     chronosync)
         [ -f ~/Downloads/CS4_Download.dmg ] && rm ~/Downloads/CS4_Download.dmg
@@ -65,6 +83,24 @@ case "$1" in
         [ -d /Applications/Evernote.app ] && rm -rf /Applications/Evernote.app
         cp -r /Volumes/Evernote/Evernote.app /Applications/Evernote.app
         hdiutil detach /Volumes/Evernote
+        ;;
+    finderatt)      # A Better Finder Attributes.app
+        [ -f ~/Downloads/ABFAX.dmg ] && rm ~/Downloads/ABFAX.dmg
+        curl -o ~/Downloads/ABFAX.dmg -L https://www.publicspace.net/download/ABFAX.dmg
+        yes | hdiutil attach ~/Downloads/ABFAX.dmg > /dev/null
+        open /Volumes/A\ Better\ Finder\ Attributes\ 7
+        [ -d /Applications/A\ Better\ Finder\ Attributes\ 7.app ] && rm -rf /Applications/A\ Better\ Finder\ Attributes\ 7.app
+        cp -r /Volumes/A\ Better\ Finder\ Attributes\ 7/A\ Better\ Finder\ Attributes\ 7.app /Applications/A\ Better\ Finder\ Attributes\ 7.app
+        hdiutil detach /Volumes/A\ Better\ Finder\ Attributes\ 7
+        ;;
+    finderren)      # A Better Finder Rename.app
+        [ -f ~/Downloads/ABFRX11.dmg ] && rm ~/Downloads/ABFRX11.dmg
+        curl -o ~/Downloads/ABFRX11.dmg -L https://www.publicspace.net/download/ABFRX11.dmg
+        yes | hdiutil attach ~/Downloads/ABFRX11.dmg > /dev/null
+        open /Volumes/A\ Better\ Finder\ Rename\ 11
+        [ -d /Applications/A\ Better\ Finder\ Rename\ 11.app ] && rm -rf /Applications/A\ Better\ Finder\ Rename\ 11.app
+        cp -r /Volumes/A\ Better\ Finder\ Rename\ 11/A\ Better\ Finder\ Rename\ 11.app /Applications/A\ Better\ Finder\ Rename\ 11.app
+        hdiutil detach /Volumes/A\ Better\ Finder\ Rename\ 11
         ;;
     forklift)
         [ -f ~/Downloads/ForkLift${FORKLIFT}.zip ] && rm ~/Downloads/ForkLift${FORKLIFT}.zip
