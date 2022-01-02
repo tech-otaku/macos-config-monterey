@@ -17,7 +17,7 @@ case "$1" in
         [ -f ~/Downloads/AdGuardInstaller.dmg ] && rm ~/Downloads/AdGuardInstaller.dmg
         curl -o ~/Downloads/AdGuardInstaller.dmg https://download.adguard.com/d/2/AdGuardInstaller.dmg
         hdiutil attach ~/Downloads/AdGuardInstaller.dmg
-        open /Volumes/AdGuard/AdGuard.app
+        open /Volumes/AdGuard/AdGuard.app   # Opens the AdGuard installer
         ;;
     atom)
         [ -f ~/Downloads/atom-mac.zip ] && rm ~/Downloads/atom-mac.zip
@@ -120,13 +120,10 @@ case "$1" in
         mv ~/Downloads/GitHub\ Desktop.app /Applications
         ;;
     googledrive)
-        [ -f ~/Downloads/InstallBackupAndSync.dmg ] && rm ~/Downloads/InstallBackupAndSync.dmg
-        curl -o ~/Downloads/InstallBackupAndSync.dmg https://dl.google.com/drive/InstallBackupAndSync.dmg
-        hdiutil attach ~/Downloads/InstallBackupAndSync.dmg
-        open /Volumes/Install\ Backup\ and\ Sync\ from\ Google
-        [ -d /Applications/Backup\ and\ Sync.app ] && rm -rf /Applications/Backup\ and\ Sync.app
-        cp -r /Volumes/Install\ Backup\ and\ Sync\ from\ Google/Backup\ and\ Sync.app /Applications/Backup\ and\ Sync.app
-        hdiutil detach /Volumes/Install\ Backup\ and\ Sync\ from\ Google
+        [ -f ~/Downloads/GoogleDrive.dmg ] && rm ~/Downloads/GoogleDrive.dmg
+        curl -o ~/Downloads/GoogleDrive.dmg https://dl.google.com/drive-file-stream/GoogleDrive.dmg
+        hdiutil attach ~/Downloads/GoogleDrive.dmg
+        open /Volumes/Install\ Google\ Drive/GoogleDrive.pkg    # Opens the Google Drive installer
         ;;
     iterm)
         [ -f ~/Downloads/iterm.zip ] && rm ~/Downloads/iterm.zip
