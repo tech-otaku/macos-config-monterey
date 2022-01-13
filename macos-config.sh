@@ -219,12 +219,12 @@ EOD
         #defaults write -g NSTableViewDefaultSizeMode -int 3
     
     
-# System Preferences > General > Allow wallpapaer tinting in windows
+# System Preferences > General > Allow wallpaper tinting in windows
     # checked
         defaults write -g AppleReduceDesktopTinting -bool false
     
     # unchecked
-        defaults write -g AppleReduceDesktopTinting -bool true
+        #defaults write -g AppleReduceDesktopTinting -bool true
     
 
 # System Preferences > General > Show scroll bars:
@@ -239,11 +239,11 @@ EOD
 
 
 # System Preferences > General > Click in the scroll bar to
-    # Jump to the spot that's clicked
-        #defaults write -g AppleScrollerPagingBehavior -bool true
-
     # Jump to the next page
         defaults write -g AppleScrollerPagingBehavior -bool false
+
+    # Jump to the spot that's clicked
+        #defaults write -g AppleScrollerPagingBehavior -bool true
 
 
 # System Preferences > General > Default web browser
@@ -312,8 +312,8 @@ echo "...General"
     pushd $ScriptPath
     
     if [ ! -f set-desktop.sh ]; then
-        curl -o "set-desktop.sh" -L https://raw.githubusercontent.com/tech-otaku/macos-desktop/master/set-desktop.sh
-        curl -o "options.json" -L https://raw.githubusercontent.com/tech-otaku/macos-desktop/master/options.json
+        curl -o "set-desktop.sh" -L https://raw.githubusercontent.com/tech-otaku/macos-desktop/main/set-desktop.sh
+        curl -o "options.json" -L https://raw.githubusercontent.com/tech-otaku/macos-desktop/main/options.json
     fi
     
     chmod +x set-desktop.sh
@@ -656,10 +656,10 @@ echo "...Trackpad"
                 sudo scutil --set ComputerName "Steve’s iMac 27\" 5K"   # 0x5374657665277320694d61632032372220354b in Hex
 
             # Shell prompt
-               sudo scutil --set HostName "Steves-iMac-27-5K"          # 0x5374657665732d694d61632d32372d354b in Hex
+                sudo scutil --set HostName "Steves-iMac-27-5K"          # 0x5374657665732d694d61632d32372d354b in Hex
 
             # Bonjour Name
-               sudo scutil --set LocalHostName "Steves-iMac-27-5K"     # 0x5374657665732d694d61632d32372d354b in Hex
+                sudo scutil --set LocalHostName "Steves-iMac-27-5K"     # 0x5374657665732d694d61632d32372d354b in Hex
 
             # `NetBIOSName` is currently set automatically to `IMAC-1C061E`. Do not overwrite it.
                 #sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "0x6D746873"
@@ -1307,11 +1307,11 @@ echo "Configured Menu Bar Extras"
     # The default shell for root is /bin/sh. The file /var/root/.profile is read when an admin user types 'sudo -i' or 'sudo su -l' (but not 'sudo su' nor 'sudo -s').
     # Change the command prompt for the root user to distinguish it from any other user's command prompt by creating /var/root/.profile 
     
-#    cat <<'EOF' | sudo tee /var/root/.profile
-#printf "Sourcing /var/root/.profile\n\n"
+    cat <<'EOF' | sudo tee /var/root/.profile
+printf "Sourcing /var/root/.profile\n\n"
 
-#export PS1="\[\e[1;31m\]\u\[\e[0m\]: \[\e[1m\]\W\[\e[0m\] \[\e[36m\]$\[\e[0m\] "
-#EOF
+export PS1="\[\e[1;31m\]\u\[\e[0m\]: \[\e[1m\]\W\[\e[0m\] \[\e[36m\]$\[\e[0m\] "
+EOF
 
 
 
