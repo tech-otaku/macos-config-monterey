@@ -255,7 +255,7 @@ EOD
         #defaults write -g AppleWindowTabbingMode -string "manual"
 
     # in full screen only
-     defaults write -g AppleWindowTabbingMode -string "fullscreen"
+        defaults write -g AppleWindowTabbingMode -string "fullscreen"
     
     # always
         #defaults write -g AppleWindowTabbingMode -string "always"
@@ -294,6 +294,18 @@ EOD
 
 # System Preferences > General > Use font smoothing when available
     # GUI Scripting: ./Scripts/Config\ All.scpt <delay-interval>
+
+    # Disable font smoothing
+        defaults -currentHost write -g AppleFontSmoothing -int 0
+
+    # Enable light font smoothing
+        #defaults -currentHost write -g AppleFontSmoothing -int 1
+
+    # Enable medium font smoothing
+        #defaults -currentHost write -g AppleFontSmoothing -int 2
+
+    # Enable strong font smoothing
+        #defaults -currentHost write -g AppleFontSmoothing -int 3
 
 echo "Configured System Preferences..."
 echo "...General"
@@ -458,7 +470,7 @@ echo "...Dock"
 # # 10. ENERGY SAVER
 # #
 
-if [ "$ModelName" == "imac" ]; then
+if [[ "$ModelName" == *"imac"* ||  "$ModelName" == *"mac mini"* ]]; then
 
     # System Preferences > Energy Saver > Turn display off after:
         # 1 min [1] --> 3 hrs [180]
@@ -508,7 +520,7 @@ if [ "$ModelName" == "imac" ]; then
             sudo pmset -c powernap 0 > /dev/null 2>&1
 
 
-elif [ "$ModelName" == "macbook" ]; then
+elif [[  "$ModelName" == *"macbook"* ]]; then
 
     # Battery Settings [-b]
 
@@ -648,7 +660,7 @@ echo "...Trackpad"
 # #
 
 # System Preferences > Sharing > Computer Name:
-    if [ "$ModelName" == "imac" ]; then
+    if [[ "$ModelName" == *"imac"* ||  "$ModelName" == *"mac mini"* ]]; then
 
         if [ -z $VM ]; then   # NOT a guest OS in a VMware VM
 
@@ -668,7 +680,7 @@ echo "...Trackpad"
 
         fi
 
-    elif [ "$ModelName" == "macbook" ]; then
+    elif [[  "$ModelName" == *"macbook"* ]]; then
         # Computer Name
             sudo scutil --set ComputerName "Steve’s MacBook Pro"    # 0x53746576652773204d6163426f6f6b2050726f in Hex
 
@@ -1057,7 +1069,7 @@ echo "Configured hidden options"
 
 
 # Set icon size
-    if [ "$ModelName" == "imac" ]; then
+    if [[ "$ModelName" == *"imac"* ||  "$ModelName" == *"mac mini"* ]]; then
         # default 64
         /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:iconSize 64" ~/Library/Preferences/com.apple.finder.plist
 
@@ -1072,7 +1084,7 @@ echo "Configured hidden options"
         fi
         /usr/libexec/PlistBuddy -c "$action :FK_StandardViewSettings:IconViewSettings:$key $type 64" ~/Library/Preferences/com.apple.finder.plist
 
-    elif [ "$ModelName" == "macbook" ]; then
+    elif [[  "$ModelName" == *"macbook"* ]]; then
         # default 64
         /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:iconSize 52" ~/Library/Preferences/com.apple.finder.plist
 
@@ -1091,10 +1103,10 @@ echo "Configured hidden options"
 
 
 # Set grid spacing
-    if [ "$ModelName" == "imac" ]; then
+    if [[ "$ModelName" == *"imac"* ||  "$ModelName" == *"mac mini"* ]]; then
         # default 54
         /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:gridSpacing 62" ~/Library/Preferences/com.apple.finder.plist
-    elif [ "$ModelName" == "macbook" ]; then
+    elif [[  "$ModelName" == *"macbook"* ]]; then
         # default 54
         /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:gridSpacing 67" ~/Library/Preferences/com.apple.finder.plist
     fi
@@ -1112,10 +1124,10 @@ echo "Configured hidden options"
 
 
 # Set text size
-    if [ "$ModelName" == "imac" ]; then
+    if [[ "$ModelName" == *"imac"* ||  "$ModelName" == *"mac mini"* ]]; then
         # default 12
         /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:textSize 12" ~/Library/Preferences/com.apple.finder.plist
-    elif [ "$ModelName" == "macbook" ]; then
+    elif [[  "$ModelName" == *"macbook"* ]]; then
         # default 12
         /usr/libexec/PlistBuddy -c "Set :DesktopViewSettings:IconViewSettings:textSize 11" ~/Library/Preferences/com.apple.finder.plist
     fi
@@ -1224,7 +1236,7 @@ echo "Configured Finder Icon View Settings"
 # #
 
 # These menu extras should appear in the menubar. Add them to the current items if they don't yet exist.
-    if [ "$ModelName" == "imac" ]; then
+    if [[ "$ModelName" == *"imac"* ||  "$ModelName" == *"mac mini"* ]]; then
     
         # System Preferences > Bluetooth > Show Bluetooth in menu bar [checked]
             #open /System/Library/CoreServices/Menu\ Extras/Bluetooth.menu                              # * * * Doesn't exist in macOS 11 Big Sur or later  * * *
@@ -1254,7 +1266,7 @@ echo "Configured Finder Icon View Settings"
             open /System/Library/CoreServices/Script\ Menu.app                                          # Comment-out for unchecked 
             
         
-    elif [ "$ModelName" == "macbook" ]; then
+    elif [[  "$ModelName" == *"macbook"* ]]; then
     
         # Wi-Fi, Battery, Clock, Spotlight and Notifications are visible by default.  
     
