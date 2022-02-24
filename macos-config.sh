@@ -296,13 +296,13 @@ EOD
     # GUI Scripting: ./Scripts/Config\ All.scpt <delay-interval>
 
     # Disable font smoothing
-        defaults -currentHost write -g AppleFontSmoothing -int 0
+        #defaults -currentHost write -g AppleFontSmoothing -int 0
 
     # Enable light font smoothing
         #defaults -currentHost write -g AppleFontSmoothing -int 1
 
     # Enable medium font smoothing
-        #defaults -currentHost write -g AppleFontSmoothing -int 2
+        defaults -currentHost write -g AppleFontSmoothing -int 2
 
     # Enable strong font smoothing
         #defaults -currentHost write -g AppleFontSmoothing -int 3
