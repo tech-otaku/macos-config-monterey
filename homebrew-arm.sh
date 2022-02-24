@@ -33,18 +33,8 @@
     
     fi
 
-    # displayplacer
-    if [[ $(command -v displayplacer) != "/opt/homebrew/bin/displayplacer" ]]; then
-        brew tap jakehilborn/jakehilborn && brew install displayplacer
-
-        echo "Installed displayplacer"
-
-    fi
-
-    # Dell P3222QE
-    screenID=$(displayplacer list | grep 'Persistent screen id:' | cut -d ':' -f2 | tr -d ' ')
-    displayplacer "id:$screenID res:3008x1692 color_depth:8 scaling:on origin:(0,0) degree:0"
-
+    # Install Rosetta 2
+    /usr/sbin/softwareupdate --install-rosetta --agree-to-license
 
 #    # hcloud
 #    if [[ $(command -v hcloud) != "/opt/homebrew/bin/hcloud" ]]; then
