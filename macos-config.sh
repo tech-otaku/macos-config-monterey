@@ -660,7 +660,7 @@ echo "...Trackpad"
 # #
 
 # System Preferences > Sharing > Computer Name:
-    if [[ "$ModelName" == *"imac"* ||  "$ModelName" == *"mac mini"* ]]; then
+    if [[ "$ModelName" == *"imac"* ]]; then
 
         if [ -z $VM ]; then   # NOT a guest OS in a VMware VM
 

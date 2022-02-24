@@ -38,6 +38,8 @@ else
 fi
 EOF
 
+    chmod +x /usr/local/bin/lunar
+
 #   lunar mode manual
 #   /Applications/Lunar.app/Contents/MacOS/Lunar @ mode manual
 
