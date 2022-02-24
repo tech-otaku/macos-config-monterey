@@ -26,7 +26,7 @@
     chmod 775 /usr/local/bin
 
     # See https://discord.com/channels/852182428155904010/852182428155904013/946306888243503135
-    tee /usr/local/bin/lunar > /dev/null 2>&1 <<EOF 
+    tee /usr/local/bin/lunar > /dev/null 2>&1 <<'EOF' 
 #!/bin/sh
 if [[ "$1" == "ddcctl" ]]; then
     shift 1
@@ -38,7 +38,14 @@ else
 fi
 EOF
 
-#    lunar mode manual
-#    lunar set brightness 6
-#    lunar set minContrast 30
-#    lunar set contrast 36
+#   lunar mode manual
+#   /Applications/Lunar.app/Contents/MacOS/Lunar @ mode manual
+
+#   lunar set brightness 6
+#   /Applications/Lunar.app/Contents/MacOS/Lunar @ set brightness 6
+
+#   lunar set minContrast 30
+#   /Applications/Lunar.app/Contents/MacOS/Lunar @ set minContrast 30
+
+#   lunar set contrast 36
+#   /Applications/Lunar.app/Contents/MacOS/Lunar @ set contrast 36

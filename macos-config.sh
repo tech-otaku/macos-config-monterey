@@ -84,13 +84,13 @@ EOD
 
 
 # Is macOS installed as a guest OS in a VMware VM?
-    if [[ $(system_profiler SPHardwareDataType | awk '/Model Identifier/ {print tolower($3)}') == *"vmware"* ]]; then
+    if [[ $(system_profiler SPHardwareDataType | awk '/Model Identifier/ {print tolower($3), tolower($4)}') == *"vmware"* ]]; then
         VM=true
     fi
 
 
 # Some settings are dependant on the computer model. ModelName is used to decide which settings are appropriate.
-    ModelName=$(system_profiler SPHardwareDataType | awk '/Model Name/ {print tolower($3)}')
+    ModelName=$(system_profiler SPHardwareDataType | awk '/Model Name/ {print tolower($3), tolower($4)}')
 
     if [ ! -z $VM ]; then   # Guest OS in a VMware VM
         ModelName="imac"
@@ -665,7 +665,7 @@ echo "...Trackpad"
         if [ -z $VM ]; then   # NOT a guest OS in a VMware VM
 
             # Computer Name
-                sudo scutil --set ComputerName "Steve’s iMac 27\" 5K"   # 0x5374657665277320694d61632032372220354b in Hex
+                sudo scutil --set ComputerName "Steve's iMac 27\" 5K"   # 0x5374657665277320694d61632032372220354b in Hex
 
             # Shell prompt
                 sudo scutil --set HostName "Steves-iMac-27-5K"          # 0x5374657665732d694d61632d32372d354b in Hex
@@ -680,9 +680,24 @@ echo "...Trackpad"
 
         fi
 
+    elif [[ "$ModelName" == *"mac mini"* ]]; then
+        # Computer Name
+            sudo scutil --set ComputerName "Steve's M1 Mac Mini"    # 0x53746576652773204d6163426f6f6b2050726f in Hex
+
+        # Shell prompt
+            sudo scutil --set HostName "Steves-M1-Mac-mini"         # 0x5374657665732d4d6163426f6f6b2d50726f in Hex
+
+        # Bonjour Name
+            sudo scutil --set LocalHostName "Steves-M1-Mac-mini"    # 0x5374657665732d4d6163426f6f6b2d50726f in Hex
+
+        # NetBIOSName is currently set automatically to `Steves MBP`.Do not overwrite it.
+            #sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "0x6D746873"
+        # 'ServerDescription' is currently set automatically to `Steve’s MacBook Pro`. Do not overwrite it.
+            #sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server ServerDescription -string "0x6D746873"
+
     elif [[  "$ModelName" == *"macbook"* ]]; then
         # Computer Name
-            sudo scutil --set ComputerName "Steve’s MacBook Pro"    # 0x53746576652773204d6163426f6f6b2050726f in Hex
+            sudo scutil --set ComputerName "Steve's MacBook Pro"    # 0x53746576652773204d6163426f6f6b2050726f in Hex
 
         # Shell prompt
             sudo scutil --set HostName "Steves-MacBook-Pro"         # 0x5374657665732d4d6163426f6f6b2d50726f in Hex
