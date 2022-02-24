@@ -24,7 +24,7 @@
         case "$folder" in 
             tech-otaku.com)
                 GUID=$(/usr/bin/uuidgen)
-                CFURLSTRING="https://www.tech-otaku.com/wp-admin/admin.php?page=stats"
+                CFURLSTRING="https://tech-otaku.com"
                 CFURLSTRINGTYPE=15
                 LABEL="tech-otaku.com"
                 TILETYPE="url-tile"
