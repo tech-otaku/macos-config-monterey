@@ -18,7 +18,7 @@
     displayplacer "id:$screenID res:3008x1692 color_depth:8 scaling:on origin:(0,0) degree:0"
 
     # Lunar
-    brew install --cask
+    brew install --cask lunar
 
     # Install Lunar CLI Integration
     sudo mkdir /usr/local/bin

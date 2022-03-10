@@ -10,7 +10,7 @@ FORKLIFT="3.4.3"
 LITTLESNITCH="4.4.3"
 LOGITECH="9.40.75"
 NAVICAT="121"
-QUERIOUS="3.1.3"
+QUERIOUS="3.2"
 
 case "$1" in
     adguard)
