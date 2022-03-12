@@ -359,6 +359,7 @@ echo "...General"
         #defaults -currentHost write com.apple.screensaver idleTime -int 3600
 
 # System Preferences > Desktop & Screen Saver > Screen Saver > Hot Corners...
+    # Source: https://apple.stackexchange.com/a/362338
     # Top Left
         # Start Screen Saver
             #defaults write com.apple.dock wvous-tl-corner -int 5
@@ -386,6 +387,19 @@ echo "...General"
             defaults write com.apple.dock wvous-tl-corner -int 1
             # The key does not exist on a fresh install
             #defaults delete com.apple.dock wvous-tl-corner 2> /dev/null
+
+        # Modifier Keys
+            # NOTE: For modifier key combinations, add the individual values together i.e. Shift (131072) + Command (1048576) = 1179648
+            # None 
+                #defaults write wvous-tl-modifier -int 0
+            # Shift
+                #defaults write wvous-tl-modifier -int 131072
+            # Command
+                #defaults write wvous-tl-modifier -int 1048576 
+            # Option
+                #defaults write wvous-tl-modifier -int 524288
+            # Control
+                #defaults write wvous-tl-modifier -int 262144
 
     # Bottom Left
         # Start Screen Saver
@@ -415,6 +429,19 @@ echo "...General"
             # The key does not exist on a fresh install
             #defaults delete com.apple.dock wvous-bl-corner 2> /dev/null
 
+        # Modifier Keys
+            # NOTE: For modifier key combinations, add the individual values together i.e. Shift (131072) + Command (1048576) = 1179648
+            # None 
+                #defaults write wvous-tl-modifier -int 0
+            # Shift
+                #defaults write wvous-tl-modifier -int 131072
+            # Command
+                #defaults write wvous-tl-modifier -int 1048576 
+            # Option
+                #defaults write wvous-tl-modifier -int 524288
+            # Control
+                #defaults write wvous-tl-modifier -int 262144
+
     # Top Right
         # Start Screen Saver
             #defaults write com.apple.dock wvous-tr-corner -int 5
@@ -443,7 +470,20 @@ echo "...General"
             # The key does not exist on a fresh install
             #defaults delete com.apple.dock wvous-tr-corner 2> /dev/null
 
- # Bottom Right
+        # Modifier Keys
+            # NOTE: For modifier key combinations, add the individual values together i.e. Shift (131072) + Command (1048576) = 1179648
+            # None 
+                #defaults write wvous-tl-modifier -int 0
+            # Shift
+                #defaults write wvous-tl-modifier -int 131072
+            # Command
+                #defaults write wvous-tl-modifier -int 1048576 
+            # Option
+                #defaults write wvous-tl-modifier -int 524288
+            # Control
+                #defaults write wvous-tl-modifier -int 262144
+
+    # Bottom Right
         # Start Screen Saver
             #defaults write com.apple.dock wvous-br-corner -int 5
         # Disable Screen Saver
@@ -470,6 +510,19 @@ echo "...General"
             defaults write com.apple.dock wvous-br-corner -int 1
             # The key does not exist on a fresh install
             #defaults delete com.apple.dock wvous-br-corner 2> /dev/null
+
+        # Modifier Keys
+            # NOTE: For modifier key combinations, add the individual values together i.e. Shift (131072) + Command (1048576) = 1179648
+            # None 
+                #defaults write wvous-tl-modifier -int 0
+            # Shift
+                #defaults write wvous-tl-modifier -int 131072
+            # Command
+                #defaults write wvous-tl-modifier -int 1048576 
+            # Option
+                #defaults write wvous-tl-modifier -int 524288
+            # Control
+                #defaults write wvous-tl-modifier -int 262144
 
 echo "...Desktop & Screensaver"
 
