@@ -358,6 +358,119 @@ echo "...General"
     # 1 Hour
         #defaults -currentHost write com.apple.screensaver idleTime -int 3600
 
+# System Preferences > Desktop & Screen Saver > Screen Saver > Hot Corners...
+    # Top Left
+        # Start Screen Saver
+            #defaults write com.apple.dock wvous-tl-corner -int 5
+        # Disable Screen Saver
+            #defaults write com.apple.dock wvous-tl-corner -int 6
+        # Mission Control
+            #defaults write com.apple.dock wvous-tl-corner -int 2
+        # Application Windows
+            #defaults write com.apple.dock wvous-tl-corner -int 3
+        # Desktop
+            #defaults write com.apple.dock wvous-tl-corner -int 4
+        # Notification Centre
+            #defaults write com.apple.dock wvous-tl-corner -int 12
+        # Launchpad
+            #defaults write com.apple.dock wvous-tl-corner -int 11
+        # Quicknote
+            #defaults write com.apple.dock wvous-tl-corner -int 14
+        # Put Display to sleep
+            #defaults write com.apple.dock wvous-tl-corner -int 10
+        # Lock Screen
+            #defaults write com.apple.dock wvous-tl-corner -int 13
+        # None 
+            # Deleting the key, or setting it to a value of 0 or 1 appear to have the same affect
+            #defaults write com.apple.dock wvous-tl-corner -int 0
+            defaults write com.apple.dock wvous-tl-corner -int 1
+            # The key does not exist on a fresh install
+            #defaults delete com.apple.dock wvous-tl-corner 2> /dev/null
+
+    # Bottom Left
+        # Start Screen Saver
+            #defaults write com.apple.dock wvous-bl-corner -int 5
+        # Disable Screen Saver
+            #defaults write com.apple.dock wvous-bl-corner -int 6
+        # Mission Control
+            #defaults write com.apple.dock wvous-bl-corner -int 2
+        # Application Windows
+            #defaults write com.apple.dock wvous-bl-corner -int 3
+        # Desktop
+            #defaults write com.apple.dock wvous-bl-corner -int 4
+        # Notification Centre
+            #defaults write com.apple.dock wvous-bl-corner -int 12
+        # Launchpad
+            #defaults write com.apple.dock wvous-bl-corner -int 11
+        # Quicknote
+            #defaults write com.apple.dock wvous-bl-corner -int 14
+        # Put Display to sleep
+            defaults write com.apple.dock wvous-bl-corner -int 10
+        # Lock Screen
+            #defaults write com.apple.dock wvous-bl-corner -int 13
+        # None 
+            # Deleting the key, or setting it to a value of 0 or 1 appear to have the same affect
+            #defaults write com.apple.dock wvous-bl-corner -int 0
+            #defaults write com.apple.dock wvous-bl-corner -int 1
+            # The key does not exist on a fresh install
+            #defaults delete com.apple.dock wvous-bl-corner 2> /dev/null
+
+    # Top Right
+        # Start Screen Saver
+            #defaults write com.apple.dock wvous-tr-corner -int 5
+        # Disable Screen Saver
+            #defaults write com.apple.dock wvous-tr-corner -int 6
+        # Mission Control
+            #defaults write com.apple.dock wvous-tr-corner -int 2
+        # Application Windows
+            #defaults write com.apple.dock wvous-tr-corner -int 3
+        # Desktop
+            #defaults write com.apple.dock wvous-tr-corner -int 4
+        # Notification Centre
+            #defaults write com.apple.dock wvous-tr-corner -int 12
+        # Launchpad
+            #defaults write com.apple.dock wvous-tr-corner -int 11
+        # Quicknote
+            #defaults write com.apple.dock wvous-tr-corner -int 14
+        # Put Display to sleep
+            #defaults write com.apple.dock wvous-tr-corner -int 10
+        # Lock Screen
+            #defaults write com.apple.dock wvous-tr-corner -int 13
+        # None 
+            # Deleting the key, or setting it to a value of 0 or 1 appear to have the same affect
+            #defaults write com.apple.dock wvous-tr-corner -int 0
+            defaults write com.apple.dock wvous-tr-corner -int 1
+            # The key does not exist on a fresh install
+            #defaults delete com.apple.dock wvous-tr-corner 2> /dev/null
+
+ # Bottom Right
+        # Start Screen Saver
+            #defaults write com.apple.dock wvous-br-corner -int 5
+        # Disable Screen Saver
+            #defaults write com.apple.dock wvous-br-corner -int 6
+        # Mission Control
+            #defaults write com.apple.dock wvous-br-corner -int 2
+        # Application Windows
+            #defaults write com.apple.dock wvous-br-corner -int 3
+        # Desktop
+            #defaults write com.apple.dock wvous-br-corner -int 4
+        # Notification Centre
+            #defaults write com.apple.dock wvous-br-corner -int 12
+        # Launchpad
+            #defaults write com.apple.dock wvous-br-corner -int 11
+        # Quicknote
+            #defaults write com.apple.dock wvous-br-corner -int 14
+        # Put Display to sleep
+            #defaults write com.apple.dock wvous-br-corner -int 10
+        # Lock Screen
+            #defaults write com.apple.dock wvous-br-corner -int 13
+        # None 
+            # Deleting the key, or setting it to a value of 0 or 1 appear to have the same affect
+            #defaults write com.apple.dock wvous-br-corner -int 0
+            defaults write com.apple.dock wvous-br-corner -int 1
+            # The key does not exist on a fresh install
+            #defaults delete com.apple.dock wvous-br-corner 2> /dev/null
+
 echo "...Desktop & Screensaver"
 
 
@@ -474,7 +587,11 @@ if [[ "$ModelName" == *"imac"* ||  "$ModelName" == *"mac mini"* ]]; then
 
     # System Preferences > Energy Saver > Turn display off after:
         # 1 min [1] --> 3 hrs [180]
-            sudo pmset -c displaysleep 1 > /dev/null 2>&1
+            if [[ "$ModelName" == *"imac"* ]]; then
+                sudo pmset -c displaysleep 1 > /dev/null 2>&1
+            elif [[ "$ModelName" == *"mac mini"* ]]; then
+                sudo pmset -c displaysleep 5 > /dev/null 2>&1
+            fi
 
         # Never [0]
             #sudo pmset -c displaysleep 0 > /dev/null 2>&1
