@@ -48,7 +48,7 @@ case "$1" in
     blacklight)
         [ -f ~/Downloads/black-light-${BLACKLIGHT}.zip ] && rm ~/Downloads/black-light-${BLACKLIGHT}.zip
         curl -o ~/Downloads/black-light-${BLACKLIGHT}.zip -L https://littoral.michelf.ca/apps/black-light/black-light-${BLACKLIGHT}.zip 
-#        cd ~/Downloads
+        cd ~/Downloads
         unzip -o ~/Downloads/black-light-${BLACKLIGHT}.zip
         [ -d /Applications/Black\ Light.app ] && rm -rf /Applications/Black\ Light.app
         mv ~/Downloads/Black\ Light.app /Applications
