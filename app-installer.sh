@@ -19,6 +19,14 @@ case "$1" in
         hdiutil attach ~/Downloads/AdGuardInstaller.dmg
         open /Volumes/AdGuard/AdGuard.app   # Opens the AdGuard installer
         ;;
+    adguard-safari)
+        [ -f /Users/steve/Downloads/AdGuard_Safari.app.zip ] && rm /Users/steve/Downloads/AdGuard_Safari.app.zip
+        curl -o /Users/steve/Downloads/AdGuard_Safari.app.zip -L https://static.adguard.com/safari/release/AdGuard_Safari.app.zip
+        pushd /Users/steve/Downloads
+        unzip -o /Users/steve/Downloads/AdGuard_Safari.app.zip
+        [ -d /Applications/AdGuard\ for\ Safari.app ] && rm -rf /Applications/AdGuard\ for\ Safari.app
+        mv ~/Downloads/AdGuard\ for\ Safari.app /Applications
+        ;;
     atom)
         [ -f ~/Downloads/atom-mac.zip ] && rm ~/Downloads/atom-mac.zip
         curl -o ~/Downloads/atom-mac.zip -L https://atom.io/download/mac 

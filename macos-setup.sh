@@ -177,6 +177,19 @@ main () {	# See https://stackoverflow.com/questions/13588457/forward-function-de
 			move_directory_entry "D" "$SOURCE/Library/Group Containers/TC3Q7MAJXF.com.adguard.mac" "/Users/steve/Library/Group Containers/TC3Q7MAJXF.com.adguard.mac"
 			move_directory_entry "F" "$SOURCE/Library/Preferences/com.adguard.mac.adguard.plist" "/Users/steve/Library/Preferences/com.adguard.mac.adguard.plist"
 			;;
+		adguard-safari)		# AdGuard for Safari.app
+            move_directory_entry "D" "$SOURCE/Library/Containers/com.adguard.safari.AdGuard.AdvancedBlocking" "/Users/steve/Library/Containers/com.adguard.safari.AdGuard.AdvancedBlocking"
+            move_directory_entry "D" "$SOURCE/Library/Containers/com.adguard.safari.AdGuard.BlockerCustom" "/Users/steve/Library/Containers/com.adguard.safari.AdGuard.BlockerCustom"
+            move_directory_entry "D" "$SOURCE/Library/Containers/com.adguard.safari.AdGuard.BlockerExtension" "/Users/steve/Library/Containers/com.adguard.safari.AdGuard.BlockerExtension"
+            move_directory_entry "D" "$SOURCE/Library/Containers/com.adguard.safari.AdGuard.BlockerOther" "/Users/steve/Library/Containers/com.adguard.safari.AdGuard.BlockerOther"
+            move_directory_entry "D" "$SOURCE/Library/Containers/com.adguard.safari.AdGuard.BlockerPrivacy" "/Users/steve/Library/Containers/com.adguard.safari.AdGuard.BlockerPrivacy"
+            move_directory_entry "D" "$SOURCE/Library/Containers/com.adguard.safari.AdGuard.Extension" "/Users/steve/Library/Containers/com.adguard.safari.AdGuard.Extension"
+            move_directory_entry "D" "$SOURCE/Library/Containers/com.adguard.safari.AdGuard.BlockerSecurity" "/Users/steve/Library/Containers/com.adguard.safari.AdGuard.BlockerSecurity"
+            move_directory_entry "D" "$SOURCE/Library/Containers/com.adguard.safari.AdGuard.BlockerSocial" "/Users/steve/Library/Containers/com.adguard.safari.AdGuard.BlockerSocial"
+            move_directory_entry "D" "$SOURCE/Library/Application Support/AdGuardSafariApp" "/Users/steve/Library/Application Support/AdGuardSafariApp"
+			move_directory_entry "D" "$SOURCE/Library/Group Containers/TC3Q7MAJXF.com.adguard.safari.AdGuard" "/Users/steve/Library/Group Containers/TC3Q7MAJXF.com.adguard.safari.AdGuard"
+			move_directory_entry "F" "$SOURCE/Library/Preferences/com.adguard.safari.AdGuard.plist" "/Users/steve/Library/Preferences/com.adguard.safari.AdGuard.plist"
+			;;
 		adobe)			# Adobe Acrobat Reader DC.app
 			move_directory_entry "D" "$SOURCE/Library/Preferences/Adobe" "/Users/steve/Library/Preferences/Adobe"
 			move_directory_entry "F" "$SOURCE/Library/Preferences/com.adobe.AdobeRdrCEFHelper.plist" "/Users/steve/Library/Preferences/com.adobe.AdobeRdrCEFHelper.plist"
