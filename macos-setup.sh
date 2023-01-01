@@ -624,9 +624,9 @@ main () {	# See https://stackoverflow.com/questions/13588457/forward-function-de
                 if [ -f "$SOURCE/.hushlogin" ]; then
                     move_directory_entry "F" "$SOURCE/.hushlogin" "${HOME}/.hushlogin"
                 fi
-                if [ -f "$SOURCE/.profile" ]; then
-                    move_directory_entry "F" "$SOURCE/.profile" "${HOME}/.profile"
-                fi
+#                if [ -f "$SOURCE/.profile" ]; then
+#                    move_directory_entry "F" "$SOURCE/.profile" "${HOME}/.profile"
+#                fi
             else
                 echo "* * * * iCloud has not finished downloading yet. Please try again later * * * *"
             fi
