@@ -1424,10 +1424,10 @@ echo "Configured Finder Icon View Settings"
     if [[ "$ModelName" == *"imac"* ||  "$ModelName" == *"mac mini"* ]]; then
     
         # System Preferences > Bluetooth > Show Bluetooth in menu bar [checked]
-            #open /System/Library/CoreServices/Menu\ Extras/Bluetooth.menu                              # * * * Doesn't exist in macOS 11 Big Sur or later  * * *
+            #open /System/Library/CoreServices/Menu\ Extras/Bluetooth.menu                              # * * * Doesn't exist in macOS 11 Big Sur or later * * *
             
         # System Preferences > Date & Time > Clock > Show date and time in menu bar [checked]
-            #open /System/Library/CoreServices/Menu\ Extras/Clock.menu                                  # * * * Doesn't exist in macOS 11 Big Sur or late  * * *
+            #open /System/Library/CoreServices/Menu\ Extras/Clock.menu                                  # * * * Doesn't exist in macOS 11 Big Sur or later * * *
             
         # System Preferences > Keyboard > Input Sources > Show Input menu in menu bar [checked]
             defaults write com.apple.TextInputMenu visible -bool true                                   # Comment-out for unchecked
@@ -1439,13 +1439,13 @@ echo "Configured Finder Icon View Settings"
             open /System/Library/CoreServices/Menu\ Extras/AirPort.menu                                 # Comment-out for unchecked
 
           # System Preferences > Network > Show VPN status in menu bar [checked]
-            #open /System/Library/CoreServices/Menu\ Extras/VPN.menu                                    # * * * Doesn't exist in macOS 11 Big Sur or late  * * *
+            #open /System/Library/CoreServices/Menu\ Extras/VPN.menu                                    # * * * Doesn't exist in macOS 11 Big Sur or later * * *
             
         # System Preferences > Time Machine > Show Time Machine in menu bar [checked]
             open /System/Library/CoreServices/Menu\ Extras/TimeMachine.menu                             # Comment-out for unchecked
         
         # System Preferences > Volume > Show volume in menu bar [checked] 
-            #open /System/Library/CoreServices/Menu\ Extras/Volume.menu                                 # * * * Doesn't exist in macOS 11 Big Sur or late  * * *
+            #open /System/Library/CoreServices/Menu\ Extras/Volume.menu                                 # * * * Doesn't exist in macOS 11 Big Sur or later * * *
         
         # Script Editor > Preferences > General > Script Menu: Show Script menu in menu bar
             open /System/Library/CoreServices/Script\ Menu.app                                          # Comment-out for unchecked 

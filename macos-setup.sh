@@ -570,7 +570,7 @@ main () {	# See https://stackoverflow.com/questions/13588457/forward-function-de
 			;;
 		vscodium)		# VS Codium.app
 			move_directory_entry "D" "$SOURCE/Library/Application Support/VSCodium" "/Users/steve/Library/Application Support/VSCodium"
-			move_directory_entry "D" "$SOURCE/.vscode" "/Users/steve/.vscode-oss"
+			move_directory_entry "D" "$SOURCE/.vscode-oss" "/Users/steve/.vscode-oss"
 			move_directory_entry "F" "$SOURCE/Library/Preferences/com.visualstudio.code.oss.plist" "/Users/steve/Library/Preferences/com.visualstudio.code.oss.plist"
 			;;
 		whitenoise)		# WhiteNoiseFree.app
@@ -613,9 +613,14 @@ main () {	# See https://stackoverflow.com/questions/13588457/forward-function-de
 			;;
 		# * * * * MISCELLANEOUS * * * *
 		bash)
-			#create_symbolic_link "/Users/steve/Dropbox/.bash_history_shared" "/Users/steve/.bash_history"
-            if [ -f "${HOME}/Library/Mobile Documents/com~apple~CloudDocs/bash/.bash_profile" ]; then
-                create_symbolic_link "${HOME}/Library/Mobile Documents/com~apple~CloudDocs/bash/.bash_profile" "${HOME}/.bash_profile"
+            if [ -f "${HOME}/Library/Mobile Documents/com~apple~CloudDocs/.bash/.bash_logout" ] && \
+            [ -f "${HOME}/Library/Mobile Documents/com~apple~CloudDocs/.bash/.bash_profile" ] && \
+            [ -f "${HOME}/Library/Mobile Documents/com~apple~CloudDocs/.bash/.bashrc" ] && \
+            [ -f "${HOME}/Library/Mobile Documents/com~apple~CloudDocs/.bash/.profile" ]; then
+                create_symbolic_link "${HOME}/Library/Mobile Documents/com~apple~CloudDocs/.bash/.bash_logout" "${HOME}/.bash_logout"
+                create_symbolic_link "${HOME}/Library/Mobile Documents/com~apple~CloudDocs/.bash/.bash_profile" "${HOME}/.bash_profile"
+                create_symbolic_link "${HOME}/Library/Mobile Documents/com~apple~CloudDocs/.bash/.bashrc" "${HOME}/.bashrc"
+                create_symbolic_link "${HOME}/Library/Mobile Documents/com~apple~CloudDocs/.bash/.profile" "${HOME}/.profile"
                 if [ -f "$SOURCE/.hushlogin" ]; then
                     move_directory_entry "F" "$SOURCE/.hushlogin" "${HOME}/.hushlogin"
                 fi
@@ -625,9 +630,11 @@ main () {	# See https://stackoverflow.com/questions/13588457/forward-function-de
             else
                 echo "* * * * iCloud has not finished downloading yet. Please try again later * * * *"
             fi
-			;;
+            ;;
 		zsh)
-            if [ -f "${HOME}/Library/Mobile Documents/com~apple~CloudDocs/zsh/.zsh_history" ]; then
+            if [ -f "${HOME}/Library/Mobile Documents/com~apple~CloudDocs/.zsh/.zsh_history" ] && \
+            [ -d "${HOME}/Library/Mobile Documents/com~apple~CloudDocs/.zsh/.zsh_sessions" ] && \
+            [ -f "${HOME}/Library/Mobile Documents/com~apple~CloudDocs/.zsh/.zshrc" ]~; then
                 move_directory_entry "F" "$SOURCE/.zshenv" "${HOME}/.zshenv"
                 if [ -f "$SOURCE/.hushlogin" ]; then 
                     move_directory_entry "F" "$SOURCE/.hushlogin" "${HOME}/.hushlogin"
@@ -635,7 +642,7 @@ main () {	# See https://stackoverflow.com/questions/13588457/forward-function-de
             else
                 echo "* * * * iCloud has not finished downloading yet. Please try again later * * * *"
             fi
-			;;
+            ;;
 		fonts)
 			move_directory_entry "D" "$SOURCE/Library/Fonts" "/Users/steve/Library/Fonts"
 			;;
