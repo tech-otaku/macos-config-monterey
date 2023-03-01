@@ -415,6 +415,14 @@ main () {	# See https://stackoverflow.com/questions/13588457/forward-function-de
 			;;
 		missioncontrol)	# Mission Control.app
 			;;
+        edge)            # MS edge
+			move_directory_entry "D" "$SOURCE/Library/Application Support/Microsoft Edge" "/Users/steve/Library/Application Support/Microsoft Edge"
+            move_directory_entry "D" "$SOURCE/Library/Application Support/Microsoft Edge Beta" "/Users/steve/Library/Application Support/Microsoft Edge Beta"
+            move_directory_entry "D" "$SOURCE/Library/Application Support/Microsoft Edge Canary" "/Users/steve/Library/Application Support/Microsoft Edge Canary"
+            move_directory_entry "D" "$SOURCE/Library/Application Support/Microsoft Edge Dev" "/Users/steve/Library/Application Support/Microsoft Edge Dev"
+            move_directory_entry "D" "$SOURCE/Library/Containers/Microsoft Edge Widgets" "/Users/steve/Library/Containers/Microsoft Edge Widgets"
+            move_directory_entry "F" "$SOURCE/Library/Preferences/com.microsoft.edgemac.plist" "/Users/steve/Library/Preferences/com.microsoft.edgemac.plist"
+            ;;
 		navicat)		# Navicat
 			move_directory_entry "D" "$SOURCE/Library/Application Support/PremiumSoft CyberTech" "/Users/steve/Library/Application Support/PremiumSoft CyberTech"
 			;;
@@ -532,6 +540,10 @@ main () {	# See https://stackoverflow.com/questions/13588457/forward-function-de
 			move_directory_entry "D" "$SOURCE/Library/Application Support/TextWrangler" "/Users/steve/Library/Application Support/TextWrangler"
 			move_directory_entry "F" "$SOURCE/Library/Preferences/com.barebones.textwrangler.plist" "/Users/steve/Library/Preferences/com.barebones.textwrangler.plist"
 			move_directory_entry "F" "$SOURCE/Library/Preferences/com.barebones.textwrangler.PreferenceData" "/Users/steve/Library/Preferences/com.barebones.textwrangler.PreferenceData"
+			;;
+		thunderbird)	# Thunderbird.app
+			move_directory_entry "D" "$SOURCE/Library/Thunderbird" "/Users/steve/Library/Thunderbird"
+			move_directory_entry "F" "$SOURCE/Library/Preferences/org.mozilla.thunderbird.plist" "/Users/steve/Library/Preferences/org.mozilla.thunderbird.plist"
 			;;
 		timemachine)	# Time Machine.app
 			;;
