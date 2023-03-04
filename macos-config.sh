@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# USAGE: [bash] ${HOME}/macos-config-big-sur-main/macos-config.sh
+# USAGE: [bash] ${HOME}/macos-config-monterey-main/macos-config.sh
 
 # NSGlobalDomain is synonymous with .GlobalPreferences
 # '-g' and '-globalDomain' can be used as synonyms for NSGlobalDomain or .GlobalPreferences
@@ -114,7 +114,7 @@ EOD
         # <dict>
         #     <key>NSStatusItem Visible Item-0</key>
         #     <true/>
-            # <dict>
+        # <dict>
     
         /usr/libexec/PlistBuddy -c "clear dict" -c "add :AppleCurrentKeyboardLayoutInputSourceID string com.apple.keylayout.British" -c "add :AppleEnabledInputSources array" -c "add :AppleEnabledInputSources:0 dict" -c "add :AppleEnabledInputSources:0:InputSourceKind string 'Keyboard Layout'" -c "add :AppleEnabledInputSources:0:'KeyboardLayout ID' integer 2" -c "add :AppleEnabledInputSources:0:'KeyboardLayout Name' string British" -c "add :AppleEnabledInputSources:1 dict" -c "add :AppleEnabledInputSources:1:'Bundle ID' string com.apple.CharacterPaletteIM" -c "add :AppleEnabledInputSources:1:InputSourceKind string 'Non Keyboard Input Method'" -c "add :AppleSelectedInputSources array" -c "add :AppleSelectedInputSources:0 dict" -c "add :AppleSelectedInputSources:0:InputSourceKind string 'Keyboard Layout'" -c "add :AppleSelectedInputSources:0:'KeyboardLayout ID' integer 2" -c "add :AppleSelectedInputSources:0:'KeyboardLayout Name' string British" /Users/steve/Library/Preferences/com.apple.HIToolbox.plist    
     }
@@ -329,7 +329,7 @@ echo "...General"
     fi
     
     chmod +x set-desktop.sh
-#    ./set-desktop.sh $DesktopPicture
+    ./set-desktop.sh $DesktopPicture
     popd
     
 
