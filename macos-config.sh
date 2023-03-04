@@ -329,7 +329,7 @@ echo "...General"
     fi
     
     chmod +x set-desktop.sh
-    ./set-desktop.sh $DesktopPicture
+#    ./set-desktop.sh $DesktopPicture
     popd
     
 
